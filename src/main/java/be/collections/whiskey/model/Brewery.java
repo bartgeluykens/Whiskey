@@ -1,5 +1,8 @@
 package be.collections.whiskey.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -12,37 +15,21 @@ import java.io.Serializable;
 @Table (name = "brewery")
 public class Brewery implements Serializable {
 
-  Integer id;
-  String name;
-  String location;
-
   @Id
+  @Getter
+  @Setter
   @Column (name="id", unique = true, nullable = false)
   @SequenceGenerator(name = "sq_brewery", sequenceName = "sq_brewery", allocationSize = 1)
   @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sq_brewery")
-  public Integer getId() {
-    return id;
-  }
+  Integer id;
 
-  public void setId(Integer id) {
-    this.id = id;
-  }
-
+  @Getter
+  @Setter
   @Column (name="name", nullable = false)
-  public String getName() {
-    return name;
-  }
+  String name;
 
-  public void setName(String name) {
-    this.name = name;
-  }
-
+  @Getter
+  @Setter
   @Column (name="location", nullable = false)
-  public String getLocation() {
-    return location;
-  }
-
-  public void setLocation(String location) {
-    this.location = location;
-  }
+  String location;
 }

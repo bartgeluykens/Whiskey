@@ -1,5 +1,8 @@
 package be.collections.whiskey.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -12,70 +15,38 @@ import java.io.Serializable;
 @Table(name = "Whiskey")
 public class Whiskey implements Serializable {
 
-  Integer Id;
-  String  name;
-  Brewery brewery;
-  WhiskeyType whiskeyType;
-  String remarks;
-  String description;
-
-
   @Id
+  @Getter
+  @Setter
   @Column(name ="id")
   @SequenceGenerator(name = "sq_whiskey", sequenceName = "sq_whiskey", allocationSize = 1)
   @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sq_whiskey")
-  public Integer getId() {
-    return Id;
-  }
+  Integer Id;
 
-  public void setId(Integer id) {
-    Id = id;
-  }
-
+  @Getter
+  @Setter
   @Column(name="name")
-  public String getName() {
-    return name;
-  }
+  String  name;
 
-  public void setName(String name) {
-    this.name = name;
-  }
-
+  @Getter
+  @Setter
   @ManyToOne (fetch = FetchType.EAGER)
   @JoinColumn(name="brewery_id")
-  public Brewery getBrewery() {
-    return brewery;
-  }
+  Brewery brewery;
 
-  public void setBrewery(Brewery brewery) {
-    this.brewery = brewery;
-  }
-
+  @Getter
+  @Setter
   @ManyToOne (fetch = FetchType.EAGER)
   @JoinColumn(name = "type_whiskey_id")
-  public WhiskeyType getWhiskeyType() {
-    return whiskeyType;
-  }
+  WhiskeyType whiskeyType;
 
-  public void setWhiskeyType(WhiskeyType whiskeyType) {
-    this.whiskeyType = whiskeyType;
-  }
-
+  @Getter
+  @Setter
   @Column (name="remarks")
-  public String getRemarks() {
-    return remarks;
-  }
+  String remarks;
 
-  public void setRemarks(String remarks) {
-    this.remarks = remarks;
-  }
-
+  @Getter
+  @Setter
   @Column (name="description")
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(String description) {
-    this.description = description;
-  }
+  String description;
 }
