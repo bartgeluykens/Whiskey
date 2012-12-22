@@ -1,0 +1,22 @@
+<html xmlns:wicket="">
+<head>
+</head>
+<body>
+  <wicket:extend>
+     <h1>Add a brewery</h1>
+      <form id="breweryForm" wicket:id="breweryForm">
+          <table>
+              <tr>
+                  <td>Name:</td>
+                  <td><input wicket:id="name" id="name" type="text" size="40" value="name"/></td>
+              </tr>
+              <tr>
+                  <td>Location:</td>
+                  <td><input wicket:id="location" id="location" type="text" size="40" value="location"/></td>
+              </tr>
+          </table>
+          <input type="submit" value="Save" name="save" wicket:id="submitButton"/>&nbsp;
+      </form>
+  </wicket:extend>
+</body>
+</html>

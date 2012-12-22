@@ -1,0 +1,35 @@
+<html xmlns:wicket="">
+<head>
+</head>
+<body>
+  <wicket:extend>
+     <h1>Edit <span wicket:id="title"></span></h1>
+      <form id="whiskeyForm" wicket:id="whiskeyForm">
+          <table>
+              <tr>
+                  <td>Name:</td>
+                  <td><input wicket:id="name" id="name" type="text" size="100" value="name"/></td>
+              </tr>
+              <tr>
+                  <td>Type:</td>
+                  <td><select wicket:id="type"/></td>
+              </tr>
+              <tr>
+                  <td>Brewery:</td>
+                  <td><select wicket:id="brewery"/></td>
+              </tr>
+              <tr>
+                  <td>Remarks:</td>
+                  <td><input wicket:id="remarks" id="remarks" type="text" size="100" value="name"/></td>
+              </tr>
+              <tr>
+                  <td>Description:</td>
+                  <td><textarea wicket:id="description" id="description" type="text" rows="10" cols="100" value="name"/></td>
+              </tr>
+          </table>
+          <input type="submit" value="Save" name="save" wicket:id="submitButton"/>&nbsp;
+          <input type="submit" value="delete" name="delete" wicket:id="deleteButton"/>
+      </form>
+  </wicket:extend>
+</body>
+</html>

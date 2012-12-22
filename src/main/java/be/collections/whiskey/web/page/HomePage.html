@@ -1,0 +1,26 @@
+<html xmlns:wicket="">
+<head>
+</head>
+<body>
+  <wicket:extend>
+     <h1>My Whiskey's</h1>
+      This is a list of all whiskey's in my possession:
+      <table cellspacing="0" class="dataview">
+          <tr>
+              <th>Action</th>
+              <th>Whiskey</th>
+              <th>Type</th>
+              <th>Brewery</th>
+              <th>Remarks</th>
+          </tr>
+          <tr wicket:id="simple">
+              <td><a wicket:id="details">Details</a>&nbsp;-&nbsp;<a wicket:id="editDetails">Edit</a>&nbsp;-&nbsp;<a wicket:id="editBrewery">Brewery</a></td>
+              <td><span wicket:id="whiskey">[whiskey]</span></td>
+              <td><span wicket:id="type">[type]</span></td>
+              <td><span wicket:id="brewery">[brewer]</span></td>
+              <td><span wicket:id="remarks">[Remakrs]</span></td>
+          </tr>
+      </table>
+  </wicket:extend>
+</body>
+</html>
