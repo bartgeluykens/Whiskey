@@ -6,34 +6,8 @@
   <!-- This context parameter is the way we indicates to Spring where it has to find its configuration files -->
   <context-param>
     <param-name>contextConfigLocation</param-name>
-    <!-- A word on the classpath"*": without the star, Spring class loader will only search in the project files and no in the jars. It has to be known
-      or it can be a long search before understanding why configuration files are not red. With the "classpath*:" all files with the right name in any jar will
-      match. It changes nothing in this example but it's an excuse to explain it -->
-    <param-value>/WEB-INF/hibernate.cfg.xml</param-value>
+    <param-value>/WEB-INF/applicationContext.xml</param-value>
   </context-param>
-
-  <!--<filter>
-    <filter-name>openEntityManagerInViewFilter</filter-name>
-    <filter-class>org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter</filter-class>
-    <init-param>
-      <param-name>entityManagerFactoryBeanName</param-name>
-      <param-value>entityManagerFactory</param-value>
-    </init-param>
-  </filter>
-
-
-  <filter-mapping>
-    <filter-name>openEntityManagerInViewFilter</filter-name>
-    <url-pattern>/*</url-pattern>
-  </filter-mapping>-->
-
-
-  <!-- This context parameter is the way configuring a Spring ApplicationContextInitializer to be launched at startup. Here we use it with the CloudFoundry 
-    discovering tool in order to activate the right Spring profile whether the application works in CloudFoundry or not -->
-<!--  <context-param>
-    <param-name>contextInitializerClasses</param-name>
-    <param-value>org.cloudfoundry.services.CloudApplicationContextInitializer</param-value>
-  </context-param>-->
 
   <!-- Simplest is to refer to the official description: http://static.springsource.org/spring/docs/3.1.x/javadoc-api/index.html?org/springframework/web/filter/CharacterEncodingFilter.html -->
   <filter>
@@ -49,12 +23,6 @@
     </init-param>
   </filter>
 
-  <!-- Spring Security declaration: it works as a standard filter -->
-  <!--<filter>
-    <filter-name>springSecurityFilterChain</filter-name>
-    <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
-  </filter>-->
-
   <!-- Encoding filter on everything -->
   <filter-mapping>
     <filter-name>encoding-filter</filter-name>
@@ -62,7 +30,7 @@
   </filter-mapping>
 
   <!-- Wicket -->
-    <servlet>
+   <servlet>
        <servlet-name>Wicket</servlet-name>
        <servlet-class>org.apache.wicket.protocol.http.WicketServlet</servlet-class>
        <init-param>
@@ -77,23 +45,10 @@
    </servlet-mapping>
 
 
-  <!-- Spring Security filter plugged on everything -->
-  <!--<filter-mapping>
-    <filter-name>springSecurityFilterChain</filter-name>
-    <url-pattern>/*</url-pattern>
-  </filter-mapping>-->
-
-
   <!-- Spring Framework startup is done with a listener -->
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>
-
-  <!--<servlet>
-    <servlet-name>exporter</servlet-name>
-    <servlet-class>org.springframework.data.rest.webmvc.RepositoryRestExporterServlet</servlet-class>
-    <load-on-startup>1</load-on-startup>
-  </servlet>-->
 
   <!-- Spring MVC entry point is a "dispatcher" servlet -->
     <servlet>
@@ -110,12 +65,6 @@
         <servlet-name>whiskey</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
-
-  <!--<servlet-mapping>
-    <servlet-name>exporter</servlet-name>
-    <url-pattern>/data-rest/*</url-pattern>
-  </servlet-mapping>-->
-
 
   <!-- Application welcome file and only page is the index.html -->
   <welcome-file-list>
