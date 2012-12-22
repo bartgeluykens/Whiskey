@@ -24,6 +24,10 @@ public class BreweryServiceImpl implements BreweryService {
     return breweryDAO.findAll();
   }
 
+  @Override
+  public List<Brewery> findByName(String name) {
+    return breweryDAO.findByName(name);
+  }
 
   @Override
   public Brewery save(Brewery brewery) {

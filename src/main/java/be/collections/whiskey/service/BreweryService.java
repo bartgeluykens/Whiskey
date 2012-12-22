@@ -12,4 +12,5 @@ import java.util.List;
 public interface BreweryService {
   List<Brewery> findAll();
   public Brewery save(Brewery brewery);
+  List<Brewery> findByName(String name);
 }

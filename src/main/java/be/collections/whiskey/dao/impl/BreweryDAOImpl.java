@@ -3,6 +3,7 @@ package be.collections.whiskey.dao.impl;
 import be.collections.whiskey.dao.BreweryDAO;
 import be.collections.whiskey.model.Brewery;
 import org.hibernate.Criteria;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -17,6 +18,13 @@ public class BreweryDAOImpl extends GenericDAOImpl <Brewery> implements BreweryD
 
   public List<Brewery> findAll() {
     Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Brewery.class);
-    return criteria.list();  //To change body of implemented methods use File | Settings | File Templates.
+    return criteria.list();
+  }
+
+  @Override
+  public List<Brewery> findByName(String name) {
+    Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Brewery.class);
+    criteria.add(Restrictions.eq("name", name));
+    return criteria.list();
   }
 }

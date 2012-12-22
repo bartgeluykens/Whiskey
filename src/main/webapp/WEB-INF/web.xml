@@ -6,7 +6,7 @@
   <!-- This context parameter is the way we indicates to Spring where it has to find its configuration files -->
   <context-param>
     <param-name>contextConfigLocation</param-name>
-    <param-value>/WEB-INF/applicationContext.xml</param-value>
+    <param-value>classpath:/applicationContext.xml</param-value>
   </context-param>
 
   <!-- Simplest is to refer to the official description: http://static.springsource.org/spring/docs/3.1.x/javadoc-api/index.html?org/springframework/web/filter/CharacterEncodingFilter.html -->

@@ -13,4 +13,5 @@ import java.util.List;
 @Repository
 public interface BreweryDAO  extends GenericDAO<Brewery> {
   List<Brewery> findAll();
+  List<Brewery> findByName (String name);
 }
