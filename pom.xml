@@ -24,21 +24,33 @@
     <finalName>whiskeycollection</finalName>
 
       <resources>
-          <resource>
-              <filtering>false</filtering>
-              <directory>src/main/resources</directory>
-          </resource>
-          <resource>
-              <filtering>false</filtering>
-              <directory>src/main/java</directory>
-              <includes>
-                  <include>**</include>
-              </includes>
-              <excludes>
-                  <exclude>**/*.java</exclude>
-              </excludes>
-          </resource>
-      </resources>
+    			<resource>
+    				<filtering>false</filtering>
+    				<directory>src/main/resources</directory>
+    			</resource>
+    			<resource>
+    				<filtering>false</filtering>
+    				<directory>src/main/java</directory>
+    				<includes>
+    					<include>**</include>
+    				</includes>
+    				<excludes>
+    					<exclude>**/*.java</exclude>
+    				</excludes>
+    			</resource>
+    		</resources>
+    		<testResources>
+    			<testResource>
+    				<filtering>false</filtering>
+    				<directory>src/main/webapp/WEB-INF/views</directory>
+    				<includes>
+    					<include>**</include>
+    				</includes>
+    				<excludes>
+    					<exclude>**/*.java</exclude>
+    				</excludes>
+    			</testResource>
+    		</testResources>
 
 
     <plugins>
