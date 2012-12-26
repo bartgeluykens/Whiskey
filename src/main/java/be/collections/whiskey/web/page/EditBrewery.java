@@ -40,6 +40,7 @@ public class EditBrewery extends BasePage {
            @Override
            public void onSubmit() {
              breweryService.save((Brewery) this.getForm().getModel().getObject());
+             setResponsePage(HomePage.class);
            }
        };
    breweryForm.add(submitButton);

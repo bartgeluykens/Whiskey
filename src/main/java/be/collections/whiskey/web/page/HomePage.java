@@ -34,7 +34,7 @@ public class HomePage extends BasePage {
 
     List< Whiskey > whiskeyList = whiskeyService.findAll();
 
-    add(new DataView<Whiskey>("simple", new ListDataProvider(whiskeyList))
+    add(new DataView<Whiskey>("whiskeyTable", new ListDataProvider(whiskeyList))
     {
         private static final long serialVersionUID = 1L;
 

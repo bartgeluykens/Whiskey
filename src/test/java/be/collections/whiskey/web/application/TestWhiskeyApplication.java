@@ -38,19 +38,12 @@ public class TestWhiskeyApplication extends WhiskeyApplication {
 
   @Override
    protected void init() {
-    //this.ctx = new ApplicationContextMock();
-    //super.init();
     getComponentInstantiationListeners().add(new SpringComponentInjector(this, applicationContext,true));
-
-    mountPage("/home", HomePage.class);
-    mountPage("/details.aspx", DetailsPage.class);
-    mountPage("/editWhiskey.aspx", EditWhiskey.class);
-    mountPage("/editBrewery.aspx", EditBrewery.class);
 
    }
 
   @Override
   public Class getHomePage() {
-    return DetailsPage.class;    //To change body of overridden methods use File | Settings | File Templates.
+    return HomePage.class;    //To change body of overridden methods use File | Settings | File Templates.
   }
 }

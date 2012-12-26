@@ -19,6 +19,7 @@ import java.util.List;
  * Omschrijving:
  * Aangemaakt op: 12/16/12
  */
+@Transactional
 public class WhiskeyTypeServiceImpl implements WhiskeyTypeService {
 
   @Autowired

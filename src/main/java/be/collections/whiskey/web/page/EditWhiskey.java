@@ -80,6 +80,7 @@ public class EditWhiskey extends BasePage {
             @Override
             public void onSubmit() {
               whiskeyService.save((Whiskey) this.getForm().getModel().getObject());
+              setResponsePage(new HomePage());
             }
         };
     whiskeyForm.add(submitButton);
