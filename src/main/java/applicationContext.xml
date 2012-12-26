@@ -62,11 +62,9 @@
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 
-
     <context:component-scan base-package="be.collections.whiskey.service"/>
     <context:component-scan base-package="be.collections.whiskey.dao"/>
     <context:component-scan base-package="be.collections.whiskey.model"/>
-
 
     <bean id="whiskeyService" class="be.collections.whiskey.service.impl.WhiskeyServiceImpl"/>
     <bean id="whiskeyTypeService" class="be.collections.whiskey.service.impl.WhiskeyTypeServiceImpl"/>
