@@ -7,9 +7,9 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 /**
+ * Whiskey Model
+ *
  * @Autor bart
- * Omschrijving:
- * Aangemaakt op: 12/9/12
  */
 @Entity
 @Table(name = "Whiskey")

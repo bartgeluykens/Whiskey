@@ -1,18 +1,15 @@
 package be.collections.whiskey.model;
 
-
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
-
 /**
+ * Whiskey Type Model
+ *
  * @Autor bart
- * Omschrijving:
- * Aangemaakt op: 12/9/12
  */
-
 @Entity
 @Table(name = "type_whiskey")
 public class WhiskeyType implements Serializable {

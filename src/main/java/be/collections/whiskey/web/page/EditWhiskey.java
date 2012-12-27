@@ -6,19 +6,12 @@ import be.collections.whiskey.model.WhiskeyType;
 import be.collections.whiskey.service.BreweryService;
 import be.collections.whiskey.service.WhiskeyService;
 import be.collections.whiskey.service.WhiskeyTypeService;
-import be.collections.whiskey.web.helpers.SelectOptions;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.*;
-import org.apache.wicket.markup.html.link.Link;
-import org.apache.wicket.markup.repeater.Item;
 import org.apache.wicket.model.CompoundPropertyModel;
-import org.apache.wicket.model.IModel;
-import org.apache.wicket.model.Model;
 import org.apache.wicket.model.PropertyModel;
 import org.apache.wicket.spring.injection.annot.SpringBean;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
