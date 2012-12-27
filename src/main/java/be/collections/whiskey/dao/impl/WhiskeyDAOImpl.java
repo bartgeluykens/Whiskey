@@ -14,19 +14,24 @@ import java.util.List;
  */
 @Repository
 public class WhiskeyDAOImpl extends GenericDAOImpl <Whiskey> implements WhiskeyDAO {
-
+  /**
+   * {@inheritDoc}
+   */
  public WhiskeyDAOImpl() {
 		super();
 	}
-
+  /**
+   * {@inheritDoc}
+   */
 	public WhiskeyDAOImpl(Class<Whiskey> clazz) {
 		super(clazz);
 	}
-
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public List<Whiskey> findAll() {
     Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Whiskey.class);
-
     return criteria.list();
   }
 }

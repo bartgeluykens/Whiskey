@@ -10,29 +10,35 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 
 /**
- * @Autor bart
- * Omschrijving:
- * Aangemaakt op: 12/23/12
+ * Base wicket test
+ *
+ * @Autor Bart Geluykens
+ *
  */
-
 public abstract class BaseWicketTest extends BaseTest {
-
+  /**
+   * Application context
+   */
   protected ApplicationContext applicationContext;
-
   /**
    * Should be WhiskeyTester, but added jira bug WICKET-4943 to solve an issue
    */
   protected WhiskeyWicketTester wicketTester;
-
+  /**
+   * Getter for the application context (if no application context found, than create one
+   * @return
+   */
   public ApplicationContext getApplicationContext() {
 
-   if (applicationContext == null)    {
-     this.applicationContext =  new ClassPathXmlApplicationContext(new String[]{"classpath:/applicationContext.xml"});
-   }
+    if (applicationContext == null)    {
+      this.applicationContext =  new ClassPathXmlApplicationContext(new String[]{"classpath:/applicationContext.xml"});
+    }
 
     return this.applicationContext;
-   }
-
+  }
+  /**
+   * Default constructor
+   */
    public BaseWicketTest() {
      WebApplication whiskeyApplication = new TestWhiskeyApplication(this.getApplicationContext());
      wicketTester = new WhiskeyWicketTester(whiskeyApplication);

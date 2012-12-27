@@ -5,12 +5,29 @@ import be.collections.whiskey.model.Brewery;
 import java.util.List;
 
 /**
+ * Service layer for the Brewery Class
+ *
  * @Autor bart
- * Omschrijving:
- * Aangemaakt op: 12/16/12
  */
 public interface BreweryService {
+  /**
+   * List all breweries
+   *
+   * @return list of breweries
+   */
   List<Brewery> findAll();
-  public Brewery save(Brewery brewery);
+  /**
+   * Find brewery by name
+   *
+   * @param name name of the brewery
+   * @return
+   */
   List<Brewery> findByName(String name);
+  /**
+   * Save a brewery
+   *
+   * @param brewery brewery to save
+   * @return The saved brewery
+   */
+  public Brewery save(Brewery brewery);
 }

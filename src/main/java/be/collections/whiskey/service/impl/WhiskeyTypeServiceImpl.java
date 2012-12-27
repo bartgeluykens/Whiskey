@@ -15,22 +15,22 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 /**
- * @Autor bart
- * Omschrijving:
- * Aangemaakt op: 12/16/12
+ * {@inheritDoc}
  */
 @Transactional
 public class WhiskeyTypeServiceImpl implements WhiskeyTypeService {
-
+  /**
+   * Whiskey type data object
+   */
   @Autowired
   WhiskeyTypeDAO whiskeyTypeDAO;
 
+  /**
+   * {@inheritDoc}
+   */
   public List<WhiskeyType> findAll() {
     return whiskeyTypeDAO.findAll();
   }
-
-
-
 }
 
 

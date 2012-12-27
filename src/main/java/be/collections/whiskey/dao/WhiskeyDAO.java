@@ -6,11 +6,16 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 /**
- * @Autor bart
- * Omschrijving:
- * Aangemaakt op: 12/14/12
+ * Service class for whiskey
+ *
+ * @Autor Bart Geluykens
  */
 @Repository
 public interface WhiskeyDAO extends GenericDAO<Whiskey> {
+  /**
+   * List all whiskey's
+   *
+   * @return List with whiskeys
+   */
   public List <Whiskey> findAll();
 }

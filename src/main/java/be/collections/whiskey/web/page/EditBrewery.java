@@ -11,20 +11,28 @@ import org.apache.wicket.model.CompoundPropertyModel;
 import org.apache.wicket.spring.injection.annot.SpringBean;
 
 /**
- * @Autor bart
- * Omschrijving:
- * Aangemaakt op: 12/16/12
+ * Edit Brewery page
+ *
+ * @Autor Bart Geluykens
  */
 public class EditBrewery extends BasePage {
-
+  /**
+   * Brewery service
+   */
   @SpringBean
   BreweryService breweryService;
-
+  /**
+   * Default constructor for adding a brewery
+   */
   public EditBrewery() {
     this(new Brewery());
 
   }
-
+  /**
+   * Constructor for editing a brewery
+   *
+   * @param brewery the brewery to edit
+   */
   public EditBrewery(Brewery brewery) {
     super();
 
@@ -43,7 +51,7 @@ public class EditBrewery extends BasePage {
              setResponsePage(HomePage.class);
            }
        };
-   breweryForm.add(submitButton);
+    breweryForm.add(submitButton);
 
     add(breweryForm);
   }

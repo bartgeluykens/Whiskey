@@ -9,13 +9,13 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 /**
- * @Autor bart
- * Omschrijving:
- * Aangemaakt op: 12/16/12
+ * {@inheritDoc}
  */
 @Repository
 public class WhiskeyTypeDAOImpl extends GenericDAOImpl <WhiskeyType> implements WhiskeyTypeDAO {
-
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public List<WhiskeyType> findAll() {
 

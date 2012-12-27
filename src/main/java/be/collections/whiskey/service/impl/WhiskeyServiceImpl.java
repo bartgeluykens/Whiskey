@@ -11,26 +11,31 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 /**
- * @Autor bart
- * Omschrijving:
- * Aangemaakt op: 12/14/12
+ * {@inheritDoc}
  */
-// @ Service
 @Transactional
 public class WhiskeyServiceImpl implements WhiskeyService{
-
+  /**
+   * Whiskey data objects
+   */
   @Autowired
   WhiskeyDAO whiskeyDAO;
-
+  /**
+   * {@inheritDoc}
+   */
   public List<Whiskey> findAll() {
      return whiskeyDAO.findAll();
   }
-
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public void save(Whiskey whiskey) {
     whiskeyDAO.save(whiskey);
   }
-
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public void remove(Whiskey whiskey) {
     whiskeyDAO.remove(whiskey);

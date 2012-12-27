@@ -9,18 +9,21 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 /**
- * @Autor bart
- * Omschrijving:
- * Aangemaakt op: 12/16/12
+ * {@inheritDoc}
  */
 @Repository
 public class BreweryDAOImpl extends GenericDAOImpl <Brewery> implements BreweryDAO {
-
+  /**
+   * {@inheritDoc}
+   */
   public List<Brewery> findAll() {
     Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Brewery.class);
     return criteria.list();
   }
 
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public List<Brewery> findByName(String name) {
     Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Brewery.class);

@@ -6,40 +6,58 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 /**
- * @Autor bart
- * Omschrijving:
- * Aangemaakt op: 12/14/12
+ * {@inheritDoc}
  */
 public class GenericDAOImpl <T> implements GenericDAO<T>{
-
-    private Class<T> clazz;
-
-    @Autowired
-    protected SessionFactory sessionFactory;
-
-    public GenericDAOImpl() {
-    }
-
+  /**
+   * Instance of the class
+   */
+  private Class<T> clazz;
+  /**
+   * Session factory
+   */
+  @Autowired
+  protected SessionFactory sessionFactory;
+  /**
+   * Default constructor
+   */
+   public GenericDAOImpl() {
+   }
+  /**
+   * {@inheritDoc}
+   */
     public GenericDAOImpl(Class<T> clazz) {
       this.clazz = clazz;
     }
 
+  /**
+   * {@inheritDoc}
+   */
     public T save(T object) {
       sessionFactory.getCurrentSession().saveOrUpdate(object);
       return object;
     }
-
+  /**
+   * {@inheritDoc}
+   * @param object object to remove
+   */
     @Override
     public void evict(T object) {
       sessionFactory.getCurrentSession().evict(object);
     }
 
-    @SuppressWarnings("unchecked")
-    @Override
-    public T get(Long id) {
-      return (T) sessionFactory.getCurrentSession().get(clazz, id);
-    }
-
+  /**
+   * {@inheritDoc}
+   */
+   @SuppressWarnings("unchecked")
+   @Override
+   public T get(Long id) {
+     return (T) sessionFactory.getCurrentSession().get(clazz, id);
+   }
+  /**
+   * {@inheritDoc}
+   * @param object Object to remove
+   */
     @SuppressWarnings("unchecked")
     @Override
     public void remove (T object) {

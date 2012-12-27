@@ -9,16 +9,20 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
- * @Autor bart
- * Omschrijving:
- * Aangemaakt op: 12/26/12
+ *
+ * Test for the edit whiskey page
+ *
+ * @Autor Bart Geluykens
+ *
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "classpath:/applicationContext.xml")
 @TransactionConfiguration(transactionManager="transactionManager", defaultRollback=false)
 @Transactional(propagation= Propagation.REQUIRED, rollbackFor={Exception.class})
 public class EditWhiskeyPageTest extends BaseWicketTest {
-
+  /**
+   * Test edit whiskey
+   */
   @Test
   public void testEditWhiskeyPage () {
     wicketTester.startPage(EditWhiskey.class);

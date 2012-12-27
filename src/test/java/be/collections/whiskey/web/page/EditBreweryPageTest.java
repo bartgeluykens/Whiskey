@@ -3,12 +3,15 @@ package be.collections.whiskey.web.page;
 import org.junit.Test;
 
 /**
- * @Autor bart
- * Omschrijving:
- * Aangemaakt op: 12/26/12
+ * Test brewery page
+ *
+ * @Autor Bart Geluykens
+ *
  */
 public class EditBreweryPageTest extends BaseWicketTest {
-
+  /**
+   * Test the edit brewery page
+   */
   @Test
   public void testEditBrewery () {
     wicketTester.startPage(EditBrewery.class);

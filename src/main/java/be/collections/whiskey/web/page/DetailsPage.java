@@ -5,12 +5,17 @@ import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.link.Link;
 
 /**
- * @Autor bart
- * Omschrijving:
- * Aangemaakt op: 12/15/12
+ *
+ * Details page
+ *
+ * @Autor Bart Geluykens
  */
 public class DetailsPage extends BasePage {
-
+  /**
+   * Create detail page
+   *
+   * @param whiskey
+   */
   public DetailsPage(final Whiskey whiskey) {
 
     super();

@@ -9,9 +9,11 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
- * @Autor bart
- * Omschrijving:
- * Aangemaakt op: 12/22/12
+ *
+ * Basic settings for all unit tests
+ *
+ * @Autor Bart Geluykens
+ *
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "classpath:/applicationContext.xml")

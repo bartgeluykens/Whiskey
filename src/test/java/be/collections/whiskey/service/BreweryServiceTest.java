@@ -11,20 +11,28 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
 
 /**
- * @Autor bart
- * Omschrijving:
- * Aangemaakt op: 12/22/12
+ * Test the brewery service
+ *
+ * @Autor Bart Geluykens
  */
 public class BreweryServiceTest extends BaseTest {
-
+  /**
+   * Dummy brewery name
+   */
   String breweryName = "##MyTestBrewery##";
-
+  /**
+   * Brewery service
+   */
   @Autowired
   BreweryService breweryService;
-
+  /**
+   * Brewery DAO
+   */
   @Autowired
   BreweryDAO breweryDAO;
-
+  /**
+   * initialize brewery
+   */
   @Before
   public void init () {
       Brewery brewery = new Brewery();
@@ -34,16 +42,17 @@ public class BreweryServiceTest extends BaseTest {
 
       breweryDAO.save(brewery);
   }
-
+  /**
+   * Does the find all breweries work?
+   */
   @Test
   public void findAllBreweries() {
     List<Brewery> breweryList = breweryService.findAll();
     assert (breweryList.size() > 0) ;
   }
-
-
-
-
+  /**
+   * Remove brewery
+   */
   @After
   public void after () {
 

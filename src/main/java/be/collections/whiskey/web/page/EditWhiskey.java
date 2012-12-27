@@ -15,26 +15,37 @@ import org.apache.wicket.spring.injection.annot.SpringBean;
 import java.util.List;
 
 /**
- * @Autor bart
- * Omschrijving:
- * Aangemaakt op: 12/15/12
+ * Edit a whiskey
+ *
+ * @Autor bart Geluykens
  */
 public class EditWhiskey extends BasePage {
-
+  /**
+   * Whiskey type service
+   */
   @SpringBean
   WhiskeyTypeService whiskeyTypeService;
-
+  /**
+   * Bewery service
+   */
   @SpringBean
   BreweryService breweryService;
-
+  /**
+   * Whiskey service
+   */
   @SpringBean
   WhiskeyService whiskeyService;
-
-
+  /**
+   * Constructor for creating a new whiskey
+   */
   public EditWhiskey() {
     this(new Whiskey());
   }
+  /**
+   * Constructor for editing an existing whiskey
 
+   * @param whiskey whiskey to edit
+   */
   public EditWhiskey(final Whiskey whiskey) {
 
     super();
