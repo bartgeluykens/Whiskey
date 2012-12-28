@@ -8,6 +8,7 @@ import be.collections.whiskey.service.WhiskeyService;
 import be.collections.whiskey.service.WhiskeyTypeService;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.*;
+import org.apache.wicket.markup.html.panel.FeedbackPanel;
 import org.apache.wicket.model.CompoundPropertyModel;
 import org.apache.wicket.model.PropertyModel;
 import org.apache.wicket.spring.injection.annot.SpringBean;
@@ -53,6 +54,8 @@ public class EditWhiskey extends BasePage {
     add(new Label("title", whiskey.getName()));
 
     Form whiskeyForm = new Form("whiskeyForm");
+    final FeedbackPanel feedbackPanel = new FeedbackPanel("feedback");
+    whiskeyForm.add(feedbackPanel);
 
     whiskeyForm.setModel(new CompoundPropertyModel(whiskey));
 
@@ -83,8 +86,13 @@ public class EditWhiskey extends BasePage {
      Button submitButton = new Button("submitButton") {
             @Override
             public void onSubmit() {
-              whiskeyService.save((Whiskey) this.getForm().getModel().getObject());
-              setResponsePage(new HomePage());
+              try {
+                whiskeyService.save((Whiskey) this.getForm().getModel().getObject());
+                setResponsePage(new HomePage());
+              } catch (RuntimeException ex) {
+                feedbackPanel.error(ex.getMessage());
+              }
+
             }
         };
     whiskeyForm.add(submitButton);
@@ -92,8 +100,12 @@ public class EditWhiskey extends BasePage {
     Button deleteButton = new Button("deleteButton") {
            @Override
            public void onSubmit() {
-             whiskeyService.remove((Whiskey) this.getForm().getModel().getObject());
-             setResponsePage(new HomePage());
+             try {
+               whiskeyService.remove((Whiskey) this.getForm().getModel().getObject());
+               setResponsePage(new HomePage());
+             } catch (RuntimeException ex) {
+               feedbackPanel.error(ex.getMessage());
+             }
            }
        };
     whiskeyForm.add(deleteButton);

@@ -7,6 +7,7 @@ import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.Button;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.TextField;
+import org.apache.wicket.markup.html.panel.FeedbackPanel;
 import org.apache.wicket.model.CompoundPropertyModel;
 import org.apache.wicket.spring.injection.annot.SpringBean;
 
@@ -38,6 +39,8 @@ public class EditBrewery extends BasePage {
 
     Form breweryForm = new Form("breweryForm");
 
+    final FeedbackPanel feedbackPanel = new FeedbackPanel("feedback");
+
     breweryForm.setModel(new CompoundPropertyModel(brewery));
 
     breweryForm.add(new TextField<String>("name").setRequired(true));
@@ -47,11 +50,19 @@ public class EditBrewery extends BasePage {
     Button submitButton = new Button("submitButton") {
            @Override
            public void onSubmit() {
-             breweryService.save((Brewery) this.getForm().getModel().getObject());
-             setResponsePage(HomePage.class);
+             try {
+               breweryService.save((Brewery) this.getForm().getModel().getObject());
+               setResponsePage(HomePage.class);
+             } catch (RuntimeException ex) {
+               feedbackPanel.error(ex.getMessage());
+             }
            }
-       };
+
+    };
     breweryForm.add(submitButton);
+
+    breweryForm.add(feedbackPanel);
+
 
     add(breweryForm);
   }
