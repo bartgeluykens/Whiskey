@@ -8,84 +8,87 @@ insert into type_whiskey( id , description) values (7, 'Rye');
 insert into type_whiskey( id , description) values (8, 'Tenessee Whiskey');
 
 
-INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id) VALUES(1,'Laphroaig 10 Years',1,1,NULL,'Laphroaig, founded in 1815 by brothers Donald and Alexander Johnston, has an extremely rich history; neighbourly disputes with Lagavulin and many ownership changes to name a couple. The 10 Year Old Single Malt is Laphroaig''s signature malt that is full sparkling gold in colour and has that signature rich smoke and seaweed character with a hint of sweetness. Surprisingly the palate is rich with subtle sweet hints and complex layers of salt and peatiness that evolve on the palate and continue to the long and dry finish.')
-INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id) VALUES(3,'Macallan Fine Oak 12 years',35,1,NULL,'Nose:   Quite light and clean. There are notes of rubbed petals and apple blossom and hot pastries. Marmalade emerges with notes of sherried peels and barley sugars, vanilla fudge provides sweetness. \u000d\u000a\u000d\u000aPalate:  Medium-body and well-rounded. There are notes of walnut and salty melted butter. Hints of fudge and cr\u00e8me anglaise. The finish is of medium-length and quite oaky.')
-INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id) VALUES(4,'Higland Park 18 years',2,1,NULL,'he 18 year old produced by Highland Park is one of the best in the world, without a doubt, and has been considered so since the first bottle was released. This is simply a stunning Scotch, balanced with rich flavors, the perfect amount of peat and a delicious, sweet oak. There is not much more to say than if you consider yourself a whisky lover and have not tried this bottle, you are missing out on a specimen of immaculate design.\u000d\u000aTasting Notes: \u000d\u000aThe 18 year old has a beautiful fragrance that screams deliciousness, complete with notes of toffee, oak, and a lovely and luscious peat. The entry is superiorly smooth and the palate is that of peat mixed with rich honey. A fine, velvety finish leaves the palate with a fantastic amount of smoke with wisps of more toffee sweetness.')
-INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id) VALUES(5,'Smokehead',3,1,NULL,'De Smokehead Single Islay malt whisky is eind april door Ian Macleod Distillers Ltd. op de markt gebracht. Het is een Islay Single malt whisky van de Ardbeg distilleerderij. Iain Weir, hoofd marketing van Ian Macleod zegt, dat Smokehead geen subtiele malt whisky is met zachte aroma''s, maar een heftig rokerige en ziltige Islay Single malt. Dit schrijft Ian Macleod zelf over hun nieuwe "baby" ... "It''s like a cannonball - an explosive rollercoaster of peat, smoke and spice with some delicate sweetness. The single malt flavour is described as fresh, fruity and immense, with notes of sherry, iodine, toffee, smoke and sea salt. The taste hits the palate at once with cocoa, peat and some honey sweetness, before exploding with peppery spice and more earthy peat."')
-INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id) VALUES(6,'The six Isles',3,5,NULL,'The Six Isles is a blended malt that should be a \u2018true reflection of the Isles\u2019. It contains 6 whiskies from Islay, Jura, Skye, Mull, Orkney and Arran. It is not that hard to identify them. Skye has only Talisker, Mull must be Tobermory (probably the peated Ledaig), Orkney is Highland Park (since the back label says \u2018Orcadian Malt\u2019, so it is not Scapa), Arran is \u2013 well \u2013 Arran. So the only unknown quantity here is the Ileach.\u000d\u000a\u000d\u000aThe nose starts very nicely peated, but also soft, and offers medicinal aromas, a touch of tar (I like the sound of that), cured bacon on the barbecue, but also a lot of sweetness from citrus, honey and juniper berries. Some vanilla and creamy butter in the background. Heather and even some violets. Soft is the keyword here.')
-INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id) VALUES(7,'Glenfiddich 12 years',4,1,'2 flessen','Glenfiddich ''12 years old'' is de populairste Scotch Single Malt Whisky ter wereld en wordt wereldwijd in zo''n 180 landen verkocht. De whisky is minimaal twaalf jaar gerijpt in eikenhouten vaten. Glenfiddich is de enige Highland whisky die gedistilleerd, gerijpt en gebotteld wordt op de eigen distilleerderij. \u000d\u000a\u000d\u000aProefnotities:\u000d\u000aKleur: licht goudgeel\u000d\u000aGeur: fris en fruitig met een vleugje peer\u000d\u000aSmaak: rijke fruitsmaken, grenenhout en een vleugje turf\u000d\u000aLagering: minimaal 12 jaar op traditioneel eiken Bourbon vaten en sherry vaten (9:1)')
-INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id) VALUES(8,'Grants',4,2,'Koken','Ideaal om te koken')
-INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id) VALUES(9,'Glenmorangie - The original',5,1,NULL,NULL)
-INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id) VALUES(10,'Jameson - Select Reserver',6,1,NULL,NULL)
-INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id) VALUES(11,'Clynelish 14 years',7,1,NULL,NULL)
-INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id) VALUES(12,'The Yamazaki',8,1,NULL,NULL)
-INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id) VALUES(13,'Ben Bracken 12 years',9,1,'Tamnavullin van de Lidl',NULL)
-INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id) VALUES(14,'The Glenlivet 12 Years',10,1,NULL,'COLOUR\u000d\u000aBright and lively gold.\u000d\u000aNOSE\u000d\u000aExquisite delicacy of summer-like fragrances, with playful interlacing of floral and fruity aromas. A sensuous touch of exotic fruit, notably pineapple. It opens in time on creamier and richer notes of stewed greengages and ripe apricots. Oak tenderly enhances that enticing bouquet with more vanilla and nutty notes and an echo of toasted oats. PALATE\u000d\u000aHoneyed floral notessahine through. A silky feel, flowing on the tongue. Smooth and sweet fruit notes of white peaches and pears poached in vanilla syrup.\u000d\u000aFINISH\u000d\u000aMarzipan and fresh hazelnuts followed by a gentle spiciness of grated ginger.')
-INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id) VALUES(15,'Blairmhor 8 Years',11,2,NULL,'Blairmhor 8 year old Scotch whisky is produced from a vatting of up to 20 different single malt whiskies, the majority from the Highland and Speyside regions. All of these malts have been distilled in traditional copper stills and then matured in casks for a minimum of eight years resulting in this smooth uncomplicated Scotch that offers the perfect introduction to Blended Malt Scotch Whisky.\u000d\u000a\u000d\u000aThis blended malt has a rich, full-bodied nose and a perfect golden honey colour. It has a peat flavour on the palate with heather overtones and a touch of malted spice together with a mature sweetness in the long finish,\u000d\u000a\u000d\u000aAltogether Blairmhor is a smooth, finely balanced, blended malt of exceptional character and reputation. \u000d\u000a\u000d\u000aNose - Rich, malty and full-bodied.\u000d\u000a\u000d\u000aColour - Golden honey.\u000d\u000a\u000d\u000aTaste - Peat and heather overtones with a touch of malted spice on the nose. A wonderful dry taste with a mature sweetness in the long finish, a smooth, finely balanced, blended malt of exceptional charact')
-INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id) VALUES(16,'The Balvenie Doublewood 12Years',12,1,NULL,NULL)
-INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id) VALUES(17,'Lagavulin 16 years',13,1,'Bijna op',NULL)
-INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id) VALUES(18,'Dalwhinnie 15 years',14,1,NULL,NULL)
-INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id) VALUES(19,'Auchentoshan',15,1,NULL,NULL)
-INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id) VALUES(20,'Glenmorangie - Madeira Wood Finnish',5,1,NULL,NULL)
-INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id) VALUES(21,'Wallace and Young 18 Years',9,1,'Fettercairn (Lidl) - Bijna op',NULL)
-INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id) VALUES(22,'Glenkinchi 12 Years',16,1,'little bottle',NULL)
-INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id) VALUES(23,'Taste of Inspirations - Island',17,1,NULL,NULL)
-INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id) VALUES(24,'Hibiki 12 Years',18,2,NULL,NULL)
-INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id) VALUES(25,'Longmorn 16 Years',19,1,NULL,NULL)
-INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id) VALUES(26,'Ragganmore',20,1,NULL,NULL)
-INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id) VALUES(27,'Glen Deveron',21,1,NULL,NULL)
-INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id) VALUES(28,'The Glendronach 12 Years',22,1,NULL,NULL)
-INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id) VALUES(29,'Singleton 12 Years',4,1,NULL,NULL)
-INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id) VALUES(30,'Wiliam Lawson 12 years',21,2,NULL,NULL)
-INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id) VALUES(31,'Connemara',23,1,NULL,NULL)
-INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id) VALUES(32,'Glenfidich - Rich Oak',4,1,NULL,NULL)
-INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id) VALUES(33,'Johnnie Walker - Black Label',24,2,NULL,NULL)
-INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id) VALUES(34,'Glen Grant',25,1,NULL,NULL)
-INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id) VALUES(35,'Chivas Regal 12 Years',26,2,NULL,NULL)
-INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id) VALUES(36,'Goldys',27,2,NULL,NULL)
-INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id) VALUES(37,'Jameson - Irish Whiskey',6,2,NULL,NULL)
-INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id) VALUES(38,'The Singleton - 12 years',4,1,NULL,NULL)
-INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id) VALUES(39,'Bushmill 16 years',28,1,NULL,NULL)
-INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id) VALUES(40,'Jack Daniel',29,4,NULL,NULL)
-INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id) VALUES(41,'Old Smuggler - 12 years',30,2,NULL,NULL)
-INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id) VALUES(42,'Longwood',31,2,'Klein flesje - enkel verkrijgbaar in Duitsland',NULL)
-INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id) VALUES(43,'Blackwood',32,2,'Klein flesje',NULL)
-INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id) VALUES(44,'Westpoint',33,4,'klein flesje',NULL)
-INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id) VALUES(45,'Statesman',34,2,'kleine fles',NULL)
+
+INSERT INTO BREWERY (id, name, location) VALUES(1,'Laphroaig','Port Ellen, Isle of Islay');
+INSERT INTO BREWERY (id, name, location) VALUES(2,'Higland Park','islands of Orkney');
+INSERT INTO BREWERY (id, name, location) VALUES(3,'Ian Macleod Distillers Lt','Dunnet Way, Broxburn. EH52 5BU');
+INSERT INTO BREWERY (id, name, location) VALUES(4,'William Grant & Sons','Dufftown, Banffshire AB55 4D');
+INSERT INTO BREWERY (id, name, location) VALUES(5,'Glenmorangie','Tain, Scotland');
+INSERT INTO BREWERY (id, name, location) VALUES(6,'The Bow Street Distillery','Dublin 7, Ireland');
+INSERT INTO BREWERY (id, name, location) VALUES(7,'Clynelish Distillery','Brora, Sutherlands');
+INSERT INTO BREWERY (id, name, location) VALUES(8,'Mash Tuns Yamazaki Distillery','Japan');
+INSERT INTO BREWERY (id, name, location) VALUES(9,'Whyte and Mackay Ltd','Speyside');
+INSERT INTO BREWERY (id, name, location) VALUES(10,'George & J.G Smith','Glenlivet Distillery, Ballindalloch, Banffshire AB37 9DB.');
+INSERT INTO BREWERY (id, name, location) VALUES(11,'Inver House Distillers','Towers Road Airdrie Lanarkshire ML6 8PL');
+INSERT INTO BREWERY (id, name, location) VALUES(12,'The Balvenie Distillery','Dufftown, Scotland');
+INSERT INTO BREWERY (id, name, location) VALUES(13,'Lagavulin distillery','island of Islay');
+INSERT INTO BREWERY (id, name, location) VALUES(14,'Dalwhinnie Distillery','Inverness-shire, Schotland');
+INSERT INTO BREWERY (id, name, location) VALUES(15,'Auchentoshan Distillery','By Dalmuir, Clydebank, G81 4SJ');
+INSERT INTO BREWERY (id, name, location) VALUES(16,'Glenkinchie Distillery','Edinburgh');
+INSERT INTO BREWERY (id, name, location) VALUES(17,'Delahaize','Alle uithoeken van schotland');
+INSERT INTO BREWERY (id, name, location) VALUES(18,'Suntory','Japan');
+INSERT INTO BREWERY (id, name, location) VALUES(19,'The Longmorn Distilleries Limited','Schotland');
+INSERT INTO BREWERY (id, name, location) VALUES(20,'Cragganmore Distillery','Ballindalloch, Banffshire');
+INSERT INTO BREWERY (id, name, location) VALUES(21,'Wiliam Lawson','Schotland');
+INSERT INTO BREWERY (id, name, location) VALUES(22,'Glendronach Distillery','Schotland');
+INSERT INTO BREWERY (id, name, location) VALUES(23,'Clooney Distillery','Connemara, Ireland');
+INSERT INTO BREWERY (id, name, location) VALUES(24,'John Walker & Sons','Edinburgh, Schotland');
+INSERT INTO BREWERY (id, name, location) VALUES(25,'Glen Grant Distillery','Abelour, Schotland');
+INSERT INTO BREWERY (id, name, location) VALUES(26,'Chivas Brothers','Keith, Schotland');
+INSERT INTO BREWERY (id, name, location) VALUES(27,'Filiers','Bachte-Maria-Leerne');
+INSERT INTO BREWERY (id, name, location) VALUES(28,'Old Bushmills Distillery co Ltd','Bushmills, Ireland');
+INSERT INTO BREWERY (id, name, location) VALUES(29,'Jack Daniel Distillery','Gennessee');
+INSERT INTO BREWERY (id, name, location) VALUES(30,'Campary Group','Old Smuggler');
+INSERT INTO BREWERY (id, name, location) VALUES(31,'Unkonw Canadian Brewery','Canada');
+INSERT INTO BREWERY (id, name, location) VALUES(32,'Blackwood distillery','Germany');
+INSERT INTO BREWERY (id, name, location) VALUES(33,'Friskey Whiskey','1920 Georgia 18 West Point, GA 31833 Verenigde Staten');
+INSERT INTO BREWERY (id, name, location) VALUES(34,'Unknown Schotch Whiskey','unkown');
+INSERT INTO BREWERY (id, name, location) VALUES(35,'Macallan Distillery','Craigellachie, Banffshire, AB38 9RX');
 
 
-INSERT INTO BREWERY (id, name, location) VALUES(1,'Laphroaig','Port Ellen, Isle of Islay')
-INSERT INTO BREWERY (id, name, location) VALUES(2,'Higland Park','islands of Orkney')
-INSERT INTO BREWERY (id, name, location) VALUES(3,'Ian Macleod Distillers Lt','Dunnet Way, Broxburn. EH52 5BU')
-INSERT INTO BREWERY (id, name, location) VALUES(4,'William Grant & Sons','Dufftown, Banffshire AB55 4D')
-INSERT INTO BREWERY (id, name, location) VALUES(5,'Glenmorangie','Tain, Scotland')
-INSERT INTO BREWERY (id, name, location) VALUES(6,'The Bow Street Distillery','Dublin 7, Ireland')
-INSERT INTO BREWERY (id, name, location) VALUES(7,'Clynelish Distillery','Brora, Sutherlands')
-INSERT INTO BREWERY (id, name, location) VALUES(8,'Mash Tuns Yamazaki Distillery','Japan')
-INSERT INTO BREWERY (id, name, location) VALUES(9,'Whyte and Mackay Ltd','Speyside')
-INSERT INTO BREWERY (id, name, location) VALUES(10,'George & J.G Smith','Glenlivet Distillery, Ballindalloch, Banffshire AB37 9DB.')
-INSERT INTO BREWERY (id, name, location) VALUES(11,'Inver House Distillers','Towers Road Airdrie Lanarkshire ML6 8PL')
-INSERT INTO BREWERY (id, name, location) VALUES(12,'The Balvenie Distillery','Dufftown, Scotland')
-INSERT INTO BREWERY (id, name, location) VALUES(13,'Lagavulin distillery','island of Islay')
-INSERT INTO BREWERY (id, name, location) VALUES(14,'Dalwhinnie Distillery','Inverness-shire, Schotland')
-INSERT INTO BREWERY (id, name, location) VALUES(15,'Auchentoshan Distillery','By Dalmuir, Clydebank, G81 4SJ')
-INSERT INTO BREWERY (id, name, location) VALUES(16,'Glenkinchie Distillery','Edinburgh')
-INSERT INTO BREWERY (id, name, location) VALUES(17,'Delahaize','Alle uithoeken van schotland')
-INSERT INTO BREWERY (id, name, location) VALUES(18,'Suntory','Japan')
-INSERT INTO BREWERY (id, name, location) VALUES(19,'The Longmorn Distilleries Limited','Schotland')
-INSERT INTO BREWERY (id, name, location) VALUES(20,'Cragganmore Distillery','Ballindalloch, Banffshire')
-INSERT INTO BREWERY (id, name, location) VALUES(21,'Wiliam Lawson','Schotland')
-INSERT INTO BREWERY (id, name, location) VALUES(22,'Glendronach Distillery','Schotland')
-INSERT INTO BREWERY (id, name, location) VALUES(23,'Clooney Distillery','Connemara, Ireland')
-INSERT INTO BREWERY (id, name, location) VALUES(24,'John Walker & Sons','Edinburgh, Schotland')
-INSERT INTO BREWERY (id, name, location) VALUES(25,'Glen Grant Distillery','Abelour, Schotland')
-INSERT INTO BREWERY (id, name, location) VALUES(26,'Chivas Brothers','Keith, Schotland')
-INSERT INTO BREWERY (id, name, location) VALUES(27,'Filiers','Bachte-Maria-Leerne')
-INSERT INTO BREWERY (id, name, location) VALUES(28,'Old Bushmills Distillery co Ltd','Bushmills, Ireland')
-INSERT INTO BREWERY (id, name, location) VALUES(29,'Jack Daniel Distillery','Gennessee')
-INSERT INTO BREWERY (id, name, location) VALUES(30,'Campary Group','Old Smuggler')
-INSERT INTO BREWERY (id, name, location) VALUES(31,'Unkonw Canadian Brewery','Canada')
-INSERT INTO BREWERY (id, name, location) VALUES(32,'Blackwood distillery','Germany')
-INSERT INTO BREWERY (id, name, location) VALUES(33,'Friskey Whiskey','1920 Georgia 18 West Point, GA 31833 Verenigde Staten')
-INSERT INTO BREWERY (id, name, location) VALUES(34,'Unknown Schotch Whiskey','unkown')
-INSERT INTO BREWERY (id, name, location) VALUES(35,'Macallan Distillery','Craigellachie, Banffshire, AB38 9RX')
+INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id, remarks, description) VALUES(1,'Laphroaig 10 Years',1,1,NULL,'Laphroaig, founded in 1815 by brothers Donald and Alexander Johnston, has an extremely rich history; neighbourly disputes with Lagavulin and many ownership changes to name a couple. The 10 Year Old Single Malt is Laphroaig''s signature malt that is full sparkling gold in colour and has that signature rich smoke and seaweed character with a hint of sweetness. Surprisingly the palate is rich with subtle sweet hints and complex layers of salt and peatiness that evolve on the palate and continue to the long and dry finish.');
+INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id, remarks, description) VALUES(3,'Macallan Fine Oak 12 years',35,1,NULL,'Nose:   Quite light and clean. There are notes of rubbed petals and apple blossom and hot pastries. Marmalade emerges with notes of sherried peels and barley sugars, vanilla fudge provides sweetness. \u000d\u000a\u000d\u000aPalate:  Medium-body and well-rounded. There are notes of walnut and salty melted butter. Hints of fudge and cr\u00e8me anglaise. The finish is of medium-length and quite oaky.')                                                                                             ;
+INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id, remarks, description) VALUES(4,'Higland Park 18 years',2,1,NULL,'he 18 year old produced by Highland Park is one of the best in the world, without a doubt, and has been considered so since the first bottle was released. This is simply a stunning Scotch, balanced with rich flavors, the perfect amount of peat and a delicious, sweet oak. There is not much more to say than if you consider yourself a whisky lover and have not tried this bottle, you are missing out on a specimen of immaculate design.\u000d\u000aTasting Notes: \u000d\u000aThe 18 year old has a beautiful fragrance that screams deliciousness, complete with notes of toffee, oak, and a lovely and luscious peat. The entry is superiorly smooth and the palate is that of peat mixed with rich honey. A fine, velvety finish leaves the palate with a fantastic amount of smoke with wisps of more toffee sweetness.');
+INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id, remarks, description) VALUES(5,'Smokehead',3,1,NULL,'De Smokehead Single Islay malt whisky is eind april door Ian Macleod Distillers Ltd. op de markt gebracht. Het is een Islay Single malt whisky van de Ardbeg distilleerderij. Iain Weir, hoofd marketing van Ian Macleod zegt, dat Smokehead geen subtiele malt whisky is met zachte aroma''s, maar een heftig rokerige en ziltige Islay Single malt. Dit schrijft Ian Macleod zelf over hun nieuwe "baby" ... "It''s like a cannonball - an explosive rollercoaster of peat, smoke and spice with some delicate sweetness. The single malt flavour is described as fresh, fruity and immense, with notes of sherry, iodine, toffee, smoke and sea salt. The taste hits the palate at once with cocoa, peat and some honey sweetness, before exploding with peppery spice and more earthy peat."');
+INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id, remarks, description) VALUES(6,'The six Isles',3,5,NULL,'The Six Isles is a blended malt that should be a \u2018true reflection of the Isles\u2019. It contains 6 whiskies from Islay, Jura, Skye, Mull, Orkney and Arran. It is not that hard to identify them. Skye has only Talisker, Mull must be Tobermory (probably the peated Ledaig), Orkney is Highland Park (since the back label says \u2018Orcadian Malt\u2019, so it is not Scapa), Arran is \u2013 well \u2013 Arran. So the only unknown quantity here is the Ileach.\u000d\u000a\u000d\u000aThe nose starts very nicely peated, but also soft, and offers medicinal aromas, a touch of tar (I like the sound of that), cured bacon on the barbecue, but also a lot of sweetness from citrus, honey and juniper berries. Some vanilla and creamy butter in the background. Heather and even some violets. Soft is the keyword here.');
+INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id, remarks, description) VALUES(7,'Glenfiddich 12 years',4,1,'2 flessen','Glenfiddich ''12 years old'' is de populairste Scotch Single Malt Whisky ter wereld en wordt wereldwijd in zo''n 180 landen verkocht. De whisky is minimaal twaalf jaar gerijpt in eikenhouten vaten. Glenfiddich is de enige Highland whisky die gedistilleerd, gerijpt en gebotteld wordt op de eigen distilleerderij. \u000d\u000a\u000d\u000aProefnotities:\u000d\u000aKleur: licht goudgeel\u000d\u000aGeur: fris en fruitig met een vleugje peer\u000d\u000aSmaak: rijke fruitsmaken, grenenhout en een vleugje turf\u000d\u000aLagering: minimaal 12 jaar op traditioneel eiken Bourbon vaten en sherry vaten (9:1)');
+INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id, remarks, description) VALUES(8,'Grants',4,2,'Koken','Ideaal om te koken');
+INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id, remarks, description) VALUES(9,'Glenmorangie - The original',5,1,NULL,NULL);
+INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id, remarks, description) VALUES(10,'Jameson - Select Reserver',6,1,NULL,NULL);
+INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id, remarks, description) VALUES(11,'Clynelish 14 years',7,1,NULL,NULL);
+INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id, remarks, description) VALUES(12,'The Yamazaki',8,1,NULL,NULL);
+INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id, remarks, description) VALUES(13,'Ben Bracken 12 years',9,1,'Tamnavullin van de Lidl',NULL);
+INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id, remarks, description) VALUES(14,'The Glenlivet 12 Years',10,1,NULL,'COLOUR\u000d\u000aBright and lively gold.\u000d\u000aNOSE\u000d\u000aExquisite delicacy of summer-like fragrances, with playful interlacing of floral and fruity aromas. A sensuous touch of exotic fruit, notably pineapple. It opens in time on creamier and richer notes of stewed greengages and ripe apricots. Oak tenderly enhances that enticing bouquet with more vanilla and nutty notes and an echo of toasted oats. PALATE\u000d\u000aHoneyed floral notessahine through. A silky feel, flowing on the tongue. Smooth and sweet fruit notes of white peaches and pears poached in vanilla syrup.\u000d\u000aFINISH\u000d\u000aMarzipan and fresh hazelnuts followed by a gentle spiciness of grated ginger.');
+INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id, remarks, description) VALUES(15,'Blairmhor 8 Years',11,2,NULL,'Blairmhor 8 year old Scotch whisky is produced from a vatting of up to 20 different single malt whiskies, the majority from the Highland and Speyside regions. All of these malts have been distilled in traditional copper stills and then matured in casks for a minimum of eight years resulting in this smooth uncomplicated Scotch that offers the perfect introduction to Blended Malt Scotch Whisky.\u000d\u000a\u000d\u000aThis blended malt has a rich, full-bodied nose and a perfect golden honey colour. It has a peat flavour on the palate with heather overtones and a touch of malted spice together with a mature sweetness in the long finish,\u000d\u000a\u000d\u000aAltogether Blairmhor is a smooth, finely balanced, blended malt of exceptional character and reputation. \u000d\u000a\u000d\u000aNose - Rich, malty and full-bodied.\u000d\u000a\u000d\u000aColour - Golden honey.\u000d\u000a\u000d\u000aTaste - Peat and heather overtones with a touch of malted spice on the nose. A wonderful dry taste with a mature sweetness in the long finish, a smooth, finely balanced, blended malt of exceptional charact');
+INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id, remarks, description) VALUES(16,'The Balvenie Doublewood 12Years',12,1,NULL,NULL);
+INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id, remarks, description) VALUES(17,'Lagavulin 16 years',13,1,'Bijna op',NULL);
+INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id, remarks, description) VALUES(18,'Dalwhinnie 15 years',14,1,NULL,NULL);
+INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id, remarks, description) VALUES(19,'Auchentoshan',15,1,NULL,NULL);
+INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id, remarks, description) VALUES(20,'Glenmorangie - Madeira Wood Finnish',5,1,NULL,NULL);
+INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id, remarks, description) VALUES(21,'Wallace and Young 18 Years',9,1,'Fettercairn (Lidl) - Bijna op',NULL);
+INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id, remarks, description) VALUES(22,'Glenkinchi 12 Years',16,1,'little bottle',NULL);
+INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id, remarks, description) VALUES(23,'Taste of Inspirations - Island',17,1,NULL,NULL);
+INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id, remarks, description) VALUES(24,'Hibiki 12 Years',18,2,NULL,NULL);
+INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id, remarks, description) VALUES(25,'Longmorn 16 Years',19,1,NULL,NULL);
+INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id, remarks, description) VALUES(26,'Ragganmore',20,1,NULL,NULL);
+INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id, remarks, description) VALUES(27,'Glen Deveron',21,1,NULL,NULL);
+INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id, remarks, description) VALUES(28,'The Glendronach 12 Years',22,1,NULL,NULL);
+INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id, remarks, description) VALUES(29,'Singleton 12 Years',4,1,NULL,NULL);
+INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id, remarks, description) VALUES(30,'Wiliam Lawson 12 years',21,2,NULL,NULL);
+INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id, remarks, description) VALUES(31,'Connemara',23,1,NULL,NULL);
+INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id, remarks, description) VALUES(32,'Glenfidich - Rich Oak',4,1,NULL,NULL);
+INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id, remarks, description) VALUES(33,'Johnnie Walker - Black Label',24,2,NULL,NULL);
+INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id, remarks, description) VALUES(34,'Glen Grant',25,1,NULL,NULL);
+INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id, remarks, description) VALUES(35,'Chivas Regal 12 Years',26,2,NULL,NULL);
+INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id, remarks, description) VALUES(36,'Goldys',27,2,NULL,NULL);
+INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id, remarks, description) VALUES(37,'Jameson - Irish Whiskey',6,2,NULL,NULL);
+INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id, remarks, description) VALUES(38,'The Singleton - 12 years',4,1,NULL,NULL);
+INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id, remarks, description) VALUES(39,'Bushmill 16 years',28,1,NULL,NULL);
+INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id, remarks, description) VALUES(40,'Jack Daniel',29,4,NULL,NULL);
+INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id, remarks, description) VALUES(41,'Old Smuggler - 12 years',30,2,NULL,NULL);
+INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id, remarks, description) VALUES(42,'Longwood',31,2,'Klein flesje - enkel verkrijgbaar in Duitsland',NULL);
+INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id, remarks, description) VALUES(43,'Blackwood',32,2,'Klein flesje',NULL);
+INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id, remarks, description) VALUES(44,'Westpoint',33,4,'klein flesje',NULL);
+INSERT INTO WHISKEY (id,name, brewery_id, type_whiskey_id, remarks, description) VALUES(45,'Statesman',34,2,'kleine fles',NULL);
+
+commit;

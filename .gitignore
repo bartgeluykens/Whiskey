@@ -1,4 +1,6 @@
 *.iml
+*.swp
+test.hsqldb.*
 .idea
 target
 tmpdb

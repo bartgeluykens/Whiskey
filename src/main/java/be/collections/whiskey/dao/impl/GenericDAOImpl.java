@@ -51,7 +51,7 @@ public class GenericDAOImpl <T> implements GenericDAO<T>{
    */
    @SuppressWarnings("unchecked")
    @Override
-   public T get(Long id) {
+   public T get(Integer id) {
      return (T) sessionFactory.getCurrentSession().get(clazz, id);
    }
   /**

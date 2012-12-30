@@ -52,8 +52,62 @@
     			</testResource>
     		</testResources>
 
-
     <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-antrun-plugin</artifactId>
+            <version>1.6</version>
+
+            <executions>
+                <execution>
+                    <id>start-hsqldb-server</id>
+                    <phase>generate-test-sources</phase>
+                    <goals>
+                        <goal>run</goal>
+                    </goals>
+                    <configuration>
+                        <target unless="maven.test.skip">
+                            <java classname="org.hsqldb.Server" classpathref="maven.test.classpath" fork="true"  spawn="true">
+                                <arg value="-port"/>
+                                <arg value="9002" />
+                                <arg value="-database.0" />
+                     			<arg value="file:${basedir}/test.hsqldb" />
+                     			<arg value="-dbname.0" />
+                     			<arg value="xdb" />
+                            </java>
+                            <echo>.. HSQLDB Server started.</echo>
+                            <java classname="org.hsqldb.cmdline.SqlTool" classpathref="maven.test.classpath" fork="true">
+                                <arg value="--inlineRc=url=jdbc:hsqldb:hsql://localhost:9002/xdb,user=sa,password=" />
+                                <arg value="--sql" />
+                                <arg value="DROP SCHEMA PUBLIC CASCADE ;" />
+                            </java>
+                            <echo>.. Clean up db</echo>
+                            <java classname="org.hsqldb.cmdline.SqlTool" classpathref="maven.test.classpath" fork="true">
+                                <arg value="--inlineRc=url=jdbc:hsqldb:hsql://localhost:9002/xdb,user=sa,password=" />
+                                <arg value="src/main/db/01_create_tables.sql" />
+                            </java>
+                            <echo>.. Tables created</echo>
+                            <java classname="org.hsqldb.cmdline.SqlTool" classpathref="maven.test.classpath" fork="true">
+                                <arg value="--inlineRc=url=jdbc:hsqldb:hsql://localhost:9002/xdb,user=sa,password=" />
+                                <arg value="src/main/db/02_create_constraints.sql" />
+                            </java>
+                            <echo>.. Constraints created</echo>
+                            <java classname="org.hsqldb.cmdline.SqlTool" classpathref="maven.test.classpath" fork="true">
+                                <arg value="--inlineRc=url=jdbc:hsqldb:hsql://localhost:9002/xdb,user=sa,password=" />
+                                <arg value="src/main/db/03_sequences.sql" />
+                            </java>
+                            <echo>.. Sequences created</echo>
+                            <java classname="org.hsqldb.cmdline.SqlTool" classpathref="maven.test.classpath" fork="true">
+                                <arg value="--inlineRc=url=jdbc:hsqldb:hsql://localhost:9002/xdb,user=sa,password=" />
+                                <arg value="src/main/db/04_fill_values.sql" />
+                            </java>
+                        </target>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
+
+
         <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -61,6 +115,9 @@
                 <configuration>
                   <parallel>methods</parallel>
                   <threadCount>10</threadCount>
+                    <environmentVariables>
+                     <environment>unittest</environment>
+                    </environmentVariables>
                 </configuration>
               </plugin>
       <plugin>
@@ -198,6 +255,11 @@
           <version>2.2.8</version>
           <!-- scope>test</scope -->
      </dependency>
+      <dependency>
+      	<groupId>org.hsqldb</groupId>
+      	<artifactId>sqltool</artifactId>
+      	<version>2.2.8</version>
+      </dependency>
       <!-- -->
       <dependency>
           <groupId>org.projectlombok</groupId>

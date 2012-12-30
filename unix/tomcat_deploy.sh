@@ -8,7 +8,7 @@ alias css='gvim --servername CSS; sleep 0.5; find . -wholename "*/src/*/*.css" -
 
 export CATALINA_OPTS="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5000" 
 
-
+export export environment=dev
 
 function byEnd ()
 {

@@ -24,7 +24,7 @@ public interface GenericDAO<T> {
    * @param id
    * @return retrieved object
    */
-	public T get(Long id);
+	public T get(Integer id);
 
   /**
    * Remove object from the database

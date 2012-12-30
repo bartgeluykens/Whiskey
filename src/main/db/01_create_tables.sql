@@ -19,3 +19,4 @@ create table type_whiskey
 , description varchar(100) not null
 );
 
+commit;
