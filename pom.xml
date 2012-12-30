@@ -1,28 +1,13 @@
-<!-- For those which are not very familiar with Maven, this file is the one and only reference for the build of the project. -->
-<!-- All common Java IDE are now completely integrated with it and will configure themselves automatically from this file -->
-<!-- Maven use concept of convetion over configuration and this project follow all Maven conventions and this way, this configuration file is pretty light -->
-<!-- One of the well known features of Maven is the dependency management which is heavily used for this project. It is an error to limit Maven to only 
-  this usage but unfortunately, in this simple project there is little else configurations. -->
-<!-- Perhaps I will do some updates sometime to demonstrate other power tools like release, profiles, specific packaging or reports. -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-
-  <!-- Define the identification of the project, in Maven its called an artifact -->
   <groupId>be.collectors</groupId>
   <artifactId>whiskey</artifactId>
   <packaging>war</packaging>
   <version>0.0.0-SNAPSHOT</version>
-
-  <!-- Define informative information on the project. There is many more informations which can be fulfilled -->
   <name>Whiskey Maven Webapp</name>
   <url>http://maven.apache.org</url>
-
-  <!-- The build block allow to specify all specific parameters. As this project follow all Maven conventions, there is no need to configure many things. -->
   <build>
-    <!-- Final name is an important parameter which handle the final package name. As this is a war and the war name will often indicates the web context 
-      of the webapp, this configuration override standard final name which contains the version number to a value more stable -->
     <finalName>whiskeycollection</finalName>
-
       <resources>
     			<resource>
     				<filtering>false</filtering>
@@ -60,6 +45,9 @@
 
             <executions>
                 <execution>
+                    <!-- Starting hsqldb for unitteting, including filling the database with custom scripts.
+                         I could also let hibernate create te database objects themself, but this way it is easier to
+                         control we have excactly the same database releases as in the production environment -->
                     <id>start-hsqldb-server</id>
                     <phase>generate-test-sources</phase>
                     <goals>
@@ -106,20 +94,19 @@
                 </execution>
             </executions>
         </plugin>
-
-
         <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.12.4</version>
-                <configuration>
-                  <parallel>methods</parallel>
-                  <threadCount>10</threadCount>
-                    <environmentVariables>
-                     <environment>unittest</environment>
-                    </environmentVariables>
-                </configuration>
-              </plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>2.12.4</version>
+            <configuration>
+              <parallel>methods</parallel>
+              <threadCount>10</threadCount>
+                <!-- Setting the unittest environment. This will set the correct database parameters -->
+                <environmentVariables>
+                 <environment>unittest</environment>
+                </environmentVariables>
+            </configuration>
+          </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -135,21 +122,6 @@
       </plugin>
     </plugins>
   </build>
-
-  <!-- Maven defines by convention the main repository but it's possible to add some other here -->
-  <repositories>
-    <!-- The CloudFoundry library used in the project is not already replicated on the central Maven repository. This block add the public milestone repository 
-      of Spring Source which contains this artifact -->
-    <repository>
-      <id>org.springframework.maven.milestone</id>
-      <name>Spring Maven Milestone Repository</name>
-      <url>http://maven.springframework.org/milestone</url>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </repository>
-  </repositories>
-
   <!-- The main project dependency reference -->
   <dependencies>
     <!-- Spring MVC 3.1 dependency, it will pull all Spring Framework by transitive dependencies -->
@@ -188,42 +160,12 @@
               <version>3.1.0.RELEASE</version>
             </dependency>
 
-    <!-- Jackson JSON marshaller. Just by adding this dependecy, Spring MVC will be able to handle JSON request when HTTP header are asking for -->
-    <!-- <dependency> -->
-    <!-- <groupId>org.codehaus.jackson</groupId> -->
-    <!-- <artifactId>jackson-jaxrs</artifactId> -->
-    <!-- <version>1.9.7</version> -->
-    <!-- </dependency> -->
-    <!-- Hibernate 4.0 most common ORM framework and JPA 2 implementation -->
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-entitymanager</artifactId>
       <version>4.1.7.Final</version>
     </dependency>
-    <!--<dependency>
-	<groupId>org.hibernate</groupId>
-	<artifactId>hibernate-annotations</artifactId>
-	<version>3.5.6-Final</version>
-    </dependency>-->
-    <!-- MySQL driver 5.1 to be able to communicate with MySQL databases -->
-    <dependency>
-      <groupId>mysql</groupId>
-      <artifactId>mysql-connector-java</artifactId>
-      <version>5.1.16</version>
-    </dependency>
-    <!-- C3P0 is a very good database connection pool manager -->
-    <dependency>
-      <groupId>c3p0</groupId>
-      <artifactId>c3p0</artifactId>
-      <version>0.9.1.2</version>
-    </dependency>
-    <!-- Cloud Foundry runtime which able application to user CloudFoudry very easily -->
-    <!--<dependency>
-      <groupId>org.cloudfoundry</groupId>
-      <artifactId>cloudfoundry-runtime</artifactId>
-      <version>0.8.1</version>
-    </dependency>-->
-    <!-- SLF4J is a common interface for logging and can be implemented with all common logging runtime. Here we load the log4j adapter and by relation, 
+    <!-- SLF4J is a common interface for logging and can be implemented with all common logging runtime. Here we load the log4j adapter and by relation,
       the API itself -->
     <dependency>
       <groupId>org.slf4j</groupId>
@@ -238,17 +180,19 @@
       <version>3.0.1</version>
       <scope>provided</scope>
     </dependency>
-    <!-- Wicket -->
+    <!-- Wicket  -->
       <dependency>
           <groupId>org.apache.wicket</groupId>
           <artifactId>wicket-core</artifactId>
           <version>6.4.0</version>
       </dependency>
+      <!-- Integrating wicket with spring -->
       <dependency>
           <groupId>org.apache.wicket</groupId>
           <artifactId>wicket-spring</artifactId>
           <version>6.4.0</version>
       </dependency>
+      <!-- hsqldb database -->
       <dependency>
           <groupId>org.hsqldb</groupId>
           <artifactId>hsqldb</artifactId>
@@ -260,13 +204,14 @@
       	<artifactId>sqltool</artifactId>
       	<version>2.2.8</version>
       </dependency>
-      <!-- -->
+      <!-- Lombok for shorter getters and setters -->
       <dependency>
           <groupId>org.projectlombok</groupId>
           <artifactId>lombok</artifactId>
           <version>0.11.6</version>
           <scope>provided</scope>
       </dependency>
+      <!-- Junit for testing purposes -->
       <dependency>
           <groupId>junit</groupId>
             <artifactId>junit</artifactId>
