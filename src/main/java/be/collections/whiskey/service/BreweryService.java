@@ -30,4 +30,12 @@ public interface BreweryService {
    * @return The saved brewery
    */
   public Brewery save(Brewery brewery);
+
+  /**
+   * Find a brewery by id
+   *
+   * @param id
+   * @return a brewery
+   */
+  public Brewery findById(Integer id);
 }

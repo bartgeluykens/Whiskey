@@ -31,6 +31,13 @@ public class WhiskeyTypeServiceImpl implements WhiskeyTypeService {
   public List<WhiskeyType> findAll() {
     return whiskeyTypeDAO.findAll();
   }
+  /**
+   * {@inheritDoc}
+   */
+  @Override
+  public WhiskeyType findById(Integer id) {
+    return whiskeyTypeDAO.findById(id);
+  }
 }
 
 

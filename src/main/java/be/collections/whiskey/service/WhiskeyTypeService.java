@@ -18,4 +18,12 @@ public interface WhiskeyTypeService {
    * @return all whiskey types
    */
   public List<WhiskeyType> findAll();
+
+  /**
+   * Find whiskeytype by id
+   *
+   * @param id
+   * @return
+   */
+  public WhiskeyType findById(Integer id);
 }
