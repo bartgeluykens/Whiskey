@@ -1,6 +1,8 @@
 package be.collections.whiskey.service.impl;
 
 import be.collections.whiskey.dao.WhiskeyTypeDAO;
+import be.collections.whiskey.dto.SearchWhiskeyDto;
+import be.collections.whiskey.model.Whiskey;
 import be.collections.whiskey.model.WhiskeyType;
 import be.collections.whiskey.service.WhiskeyTypeService;
 import org.junit.runner.RunWith;

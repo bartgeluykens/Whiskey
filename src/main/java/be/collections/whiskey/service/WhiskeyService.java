@@ -1,5 +1,6 @@
 package be.collections.whiskey.service;
 
+import be.collections.whiskey.dto.SearchWhiskeyDto;
 import be.collections.whiskey.model.Whiskey;
 
 import java.util.List;
@@ -28,4 +29,8 @@ public interface WhiskeyService {
    * @param whiskey
    */
    public void remove(Whiskey whiskey);
+  /**
+   * Whiskey Service
+   */
+   public List<Whiskey> search(SearchWhiskeyDto searchWhiskeyDto);
 }

@@ -99,8 +99,8 @@
             <artifactId>maven-surefire-plugin</artifactId>
             <version>2.12.4</version>
             <configuration>
-              <parallel>methods</parallel>
-              <threadCount>10</threadCount>
+              <!--parallel>methods</parallel>
+              <threadCount>1</threadCount-->
                 <!-- Setting the unittest environment. This will set the correct database parameters -->
                 <environmentVariables>
                  <environment>unittest</environment>

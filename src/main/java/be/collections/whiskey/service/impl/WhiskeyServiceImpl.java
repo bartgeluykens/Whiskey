@@ -1,6 +1,7 @@
 package be.collections.whiskey.service.impl;
 
 import be.collections.whiskey.dao.WhiskeyDAO;
+import be.collections.whiskey.dto.SearchWhiskeyDto;
 import be.collections.whiskey.model.Whiskey;
 import be.collections.whiskey.service.WhiskeyService;
 import org.hibernate.Criteria;
@@ -39,5 +40,15 @@ public class WhiskeyServiceImpl implements WhiskeyService{
   @Override
   public void remove(Whiskey whiskey) {
     whiskeyDAO.remove(whiskey);
+  }
+  /**
+   * {@inheritDoc}
+   */
+  public List<Whiskey> search(SearchWhiskeyDto searchWhiskeyDto) {
+    return whiskeyDAO.search(searchWhiskeyDto);
+  }
+
+  public void setWhiskeyDAO(WhiskeyDAO whiskeyDAO) {
+    this.whiskeyDAO = whiskeyDAO;
   }
 }

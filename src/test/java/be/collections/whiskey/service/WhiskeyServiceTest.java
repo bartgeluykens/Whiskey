@@ -2,18 +2,27 @@ package be.collections.whiskey.service;
 
 import be.collections.whiskey.BaseTest;
 import be.collections.whiskey.dao.BreweryDAO;
+import be.collections.whiskey.dao.WhiskeyDAO;
 import be.collections.whiskey.dao.WhiskeyTypeDAO;
+import be.collections.whiskey.dto.SearchWhiskeyDto;
 import be.collections.whiskey.model.Brewery;
 import be.collections.whiskey.model.Whiskey;
 import be.collections.whiskey.model.WhiskeyType;
+import be.collections.whiskey.service.impl.WhiskeyServiceImpl;
+import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -23,37 +32,36 @@ import org.springframework.transaction.annotation.Transactional;
  * Omschrijving:
  * Aangemaakt op: 12/30/12
  */
-public class WhiskeyServiceTest extends BaseTest {
+public class WhiskeyServiceTest extends Assert {
 
-  @Autowired
   WhiskeyService whiskeyService;
 
-  @Autowired
-  WhiskeyTypeDAO whiskeyTypeDAO;
+  WhiskeyDAO whiskeyDAO;
 
-  @Autowired
-  BreweryService breweryService;
+  @Before
+  public void setUp() {
+    whiskeyService = new WhiskeyServiceImpl();
 
-  @Autowired
-  BreweryDAO breweryDAO;
-
-  /**
-   * Look if we can add a whiskey
-   */
-  @Test
-  public void testAddingAWhiskey () {
-
-    Brewery brewery = breweryService.findById(1);
-    WhiskeyType whiskeyType = whiskeyTypeDAO.findById(1);
-
-    Whiskey whiskey = new Whiskey();
-    whiskey.setBrewery(brewery);
-    whiskey.setDescription("My favorite whiskey");
-    whiskey.setName("Barts super whiskey");
-    whiskey.setRemarks("My remarks");
-    whiskey.setWhiskeyType(whiskeyType);
-
-    whiskeyService.save(whiskey);
-
+    whiskeyDAO = Mockito.mock(WhiskeyDAO.class);
+    ((WhiskeyServiceImpl)whiskeyService).setWhiskeyDAO(whiskeyDAO);
   }
+
+  @Test
+  public void whenISearchAWhiskey() {
+    SearchWhiskeyDto searchWhiskeyDto =  new SearchWhiskeyDto();
+    searchWhiskeyDto.setWhiskeyName("Search This Whiskey");
+
+    List<Whiskey> whiskeys = new ArrayList<Whiskey>();
+    Whiskey whiskey = new Whiskey();
+    whiskey.setName("Found");
+    whiskeys.add(whiskey);
+    Mockito.when(whiskeyDAO.search(searchWhiskeyDto)).thenReturn(whiskeys);
+
+    List<Whiskey> foundWhiskeys = whiskeyService.search(searchWhiskeyDto);
+    assertEquals(foundWhiskeys.size(),1);
+
+    assertEquals(foundWhiskeys.get(0).getName(),"Found");
+  }
+
+
 }

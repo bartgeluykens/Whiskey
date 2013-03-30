@@ -1,0 +1,31 @@
+<html xmlns:wicket="">
+<head>
+</head>
+<body>
+  <wicket:extend>
+    <div wicket:id="feedback"/>
+    <div class="hero-unit">
+      <h1>Search Whiskey</h1>
+      <form wicket:id="search-form">
+          <table>
+              <tr>
+                  <td>Name:</td>
+                  <td><input wicket:id="name" type="text" size="100"/></td>
+              </tr>
+              <tr>
+                  <td>Type:</td>
+                  <td><select wicket:id="type"/></td>
+                  <td>Brewery:</td>
+                  <td><select wicket:id="brewery"/></td>
+              </tr>
+          </table>
+          <input type="submit" value="Search" wicket:id="button-search" class="btn btn-primary"/>
+      </form>
+    </div>
+    <div class="row">
+      <div wicket:id="no-data-found-container">No data found</div>
+      <span wicket:id="overview-panel"></span>
+    </div>
+  </wicket:extend>
+</body>
+</html>

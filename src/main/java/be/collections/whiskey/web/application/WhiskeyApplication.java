@@ -1,9 +1,6 @@
 package be.collections.whiskey.web.application;
 
-import be.collections.whiskey.web.page.DetailsPage;
-import be.collections.whiskey.web.page.EditBrewery;
-import be.collections.whiskey.web.page.EditWhiskey;
-import be.collections.whiskey.web.page.HomePage;
+import be.collections.whiskey.web.page.*;
 import org.apache.wicket.core.util.file.WebApplicationPath;
 import org.apache.wicket.protocol.http.WebApplication;
 import org.apache.wicket.settings.IResourceSettings;
@@ -67,5 +64,6 @@ public class WhiskeyApplication extends WebApplication {
     mountPage("/details.aspx", DetailsPage.class);
     mountPage("/editWhiskey.aspx", EditWhiskey.class);
     mountPage("/editBrewery.aspx", EditBrewery.class);
+    mountPage("/searchWhiskey.aspx", SearchWhiskey.class);
   }
 }

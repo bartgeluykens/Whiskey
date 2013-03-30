@@ -57,51 +57,12 @@ public class HomePageTest extends BaseWicketTest {
 
     Mockito.when(whiskeyService.findAll()).thenReturn(whiskeyList);
     wicketTester.startPage(HomePage.class, null);
-    wicketTester.assertVisible("whiskey-table");
-    wicketTester.assertModelValue("whiskey-table:1:whiskey", "Great Test");
-    wicketTester.assertModelValue("whiskey-table:1:brewery", "Great Brewery");
-    wicketTester.assertModelValue("whiskey-table:1:type", "Great Malt");
-    wicketTester.assertModelValue("whiskey-table:1:remarks", "Great Remark");
+    wicketTester.assertVisible("overview-panel:whiskey-table");
+    wicketTester.assertModelValue("overview-panel:whiskey-table:1:whiskey", "Great Test");
+    wicketTester.assertModelValue("overview-panel:whiskey-table:1:brewery", "Great Brewery");
+    wicketTester.assertModelValue("overview-panel:whiskey-table:1:type", "Great Malt");
+    wicketTester.assertModelValue("overview-panel:whiskey-table:1:remarks", "Great Remark");
 
-  }
-
-  @Test
-  public void whenIClickOnEditWhiskeyIWantToOpenTheEditWhiskeyPage () {
-
-    List< Whiskey > whiskeyList = new ArrayList<Whiskey>();
-
-    whiskeyList.add(getBasicWhiskeyObject());
-
-    Mockito.when(whiskeyService.findAll()).thenReturn(whiskeyList);
-    wicketTester.startPage(HomePage.class, null);
-    wicketTester.clickLink("whiskey-table:1:whiskey-edit");
-    wicketTester.assertRenderedPage(EditWhiskey.class);
-  }
-
-  @Test
-  public void whenIClickOnEditWhiskeyIWantToOpenTheViewWhiskeyPage () {
-
-    List< Whiskey > whiskeyList = new ArrayList<Whiskey>();
-
-    whiskeyList.add(getBasicWhiskeyObject());
-
-    Mockito.when(whiskeyService.findAll()).thenReturn(whiskeyList);
-    wicketTester.startPage(HomePage.class, null);
-    wicketTester.clickLink("whiskey-table:1:whiskey-details");
-    wicketTester.assertRenderedPage(DetailsPage.class);
-  }
-
-  @Test
-  public void whenIClickOnEditBreweryIWantToOpenTheEditBreweryPage () {
-
-    List< Whiskey > whiskeyList = new ArrayList<Whiskey>();
-
-    whiskeyList.add(getBasicWhiskeyObject());
-
-    Mockito.when(whiskeyService.findAll()).thenReturn(whiskeyList);
-    wicketTester.startPage(HomePage.class, null);
-    wicketTester.clickLink("whiskey-table:1:brewery-edit");
-    wicketTester.assertRenderedPage(EditBrewery.class);
   }
 
 }

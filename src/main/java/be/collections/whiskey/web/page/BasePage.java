@@ -15,7 +15,7 @@ public class BasePage extends WebPage {
     /**
      * Link for adding a whiskey
      */
-   add(new Link<Void>("add") {
+   add(new Link<Void>("add-whiskey") {
       @Override
       public void onClick() {
         setResponsePage(new EditWhiskey());
@@ -33,10 +33,19 @@ public class BasePage extends WebPage {
     /**
      * Add brewery link
      */
-    add(new Link<Void>("addBrewery") {
+    add(new Link<Void>("add-brewery") {
        @Override
        public void onClick() {
          setResponsePage(new EditBrewery());
+       }
+     });
+    /**
+     * search link
+     */
+    add(new Link<Void>("search-whiskey") {
+       @Override
+       public void onClick() {
+         setResponsePage(new SearchWhiskey());
        }
      });
 

@@ -4,6 +4,7 @@ import be.collections.whiskey.model.Brewery;
 import be.collections.whiskey.model.Whiskey;
 import be.collections.whiskey.service.BreweryService;
 import be.collections.whiskey.service.WhiskeyService;
+import be.collections.whiskey.web.panel.WhiskeyOverviewPanel;
 import org.apache.wicket.AttributeModifier;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.link.Link;
@@ -34,45 +35,9 @@ public class HomePage extends BasePage {
 
     List< Whiskey > whiskeyList = whiskeyService.findAll();
 
-    add(new DataView<Whiskey>("whiskey-table", new ListDataProvider(whiskeyList))
-    {
-        private static final long serialVersionUID = 1L;
-
-      @Override
-       protected void populateItem(final Item<Whiskey> item)
-       {
-           Whiskey whiskey = item.getModelObject();
-
-           item.add(new Link<Void>("whiskey-details") {
-              @Override
-               public void onClick() {
-                 setResponsePage(new DetailsPage(item.getModelObject()));
-              }
-            });
-
-           item.add(new Link<Void>("whiskey-edit") {
-              @Override
-               public void onClick() {
-                 setResponsePage(new EditWhiskey(item.getModelObject()));
-              }
-            });
+    add( new WhiskeyOverviewPanel("overview-panel", whiskeyList));
 
 
-         item.add(new Link<Void>("brewery-edit") {
-            @Override
-             public void onClick() {
-               setResponsePage(new EditBrewery(item.getModelObject().getBrewery()));
-            }
-          });
-
-         item.add(new Label("whiskey", whiskey.getName()));
-         item.add(new Label("brewery", whiskey.getBrewery().getName()));
-         item.add(new Label("type"   , whiskey.getWhiskeyType().getDescription()));
-         item.add(new Label("remarks", whiskey.getRemarks()));
-
-       }
-
-    });
 
   }
 }

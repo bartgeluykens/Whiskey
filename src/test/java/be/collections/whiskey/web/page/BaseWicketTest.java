@@ -61,8 +61,9 @@ public abstract class BaseWicketTest extends Assert {
    }
 
    public void checkSideLinks () {
-     wicketTester.assertComponent("add", Link.class);
-     wicketTester.assertComponent("addBrewery", Link.class);
+     wicketTester.assertComponent("add-brewery", Link.class);
+     wicketTester.assertComponent("add-whiskey", Link.class);
+     wicketTester.assertComponent("search-whiskey", Link.class);
      wicketTester.assertComponent("home", Link.class);
    }
 
