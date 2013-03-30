@@ -10,6 +10,7 @@ import java.util.List;
  *
  * @Autor bart
  */
+@SuppressWarnings("PMD.UnusedModifier")
 public interface WhiskeyService {
   /**
    * List all whiskeys

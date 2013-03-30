@@ -1,7 +1,6 @@
 package be.collections.whiskey.dao.impl;
 
 import be.collections.whiskey.dao.WhiskeyTypeDAO;
-import be.collections.whiskey.model.Whiskey;
 import be.collections.whiskey.model.WhiskeyType;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;

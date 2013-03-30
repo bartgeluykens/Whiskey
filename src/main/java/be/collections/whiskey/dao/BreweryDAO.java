@@ -12,6 +12,7 @@ import java.util.List;
  * Aangemaakt op: 12/16/12
  */
 @Repository
+@SuppressWarnings("PMD.UnusedModifier")
 public interface BreweryDAO  extends GenericDAO<Brewery> {
   /**
    * find all breweries

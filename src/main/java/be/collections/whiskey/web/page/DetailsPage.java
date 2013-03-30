@@ -31,7 +31,7 @@ public class DetailsPage extends BasePage {
     add(new Link<Void>("edit") {
       @Override
       public void onClick() {
-        setResponsePage(new EditWhiskey((whiskey)));
+        setResponsePage(new EditWhiskey(whiskey));
       }
     });
 

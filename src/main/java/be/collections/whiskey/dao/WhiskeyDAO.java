@@ -12,6 +12,7 @@ import java.util.List;
  * @Autor Bart Geluykens
  */
 @Repository
+@SuppressWarnings("PMD.UnusedModifier")
 public interface WhiskeyDAO extends GenericDAO<Whiskey> {
   /**
    * List all whiskey's

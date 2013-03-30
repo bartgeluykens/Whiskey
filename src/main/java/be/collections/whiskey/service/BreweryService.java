@@ -9,6 +9,7 @@ import java.util.List;
  *
  * @Autor bart
  */
+@SuppressWarnings("PMD.UnusedModifier")
 public interface BreweryService {
   /**
    * List all breweries
@@ -30,7 +31,6 @@ public interface BreweryService {
    * @return The saved brewery
    */
   public Brewery save(Brewery brewery);
-
   /**
    * Find a brewery by id
    *

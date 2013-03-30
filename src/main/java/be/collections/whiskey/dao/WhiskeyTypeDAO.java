@@ -1,6 +1,5 @@
 package be.collections.whiskey.dao;
 
-import be.collections.whiskey.model.Whiskey;
 import be.collections.whiskey.model.WhiskeyType;
 import org.springframework.stereotype.Repository;
 
@@ -13,6 +12,7 @@ import java.util.List;
  * @Autor Bart Geluykens
  */
 @Repository
+@SuppressWarnings("PMD.UnusedModifier")
 public interface WhiskeyTypeDAO extends GenericDAO<WhiskeyType> {
   /**
    * Find al whiskey types

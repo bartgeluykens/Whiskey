@@ -1,7 +1,6 @@
 package be.collections.whiskey.web.page;
 
 import be.collections.whiskey.dto.SearchWhiskeyDto;
-import be.collections.whiskey.model.Brewery;
 import be.collections.whiskey.model.Whiskey;
 import be.collections.whiskey.model.WhiskeyType;
 import be.collections.whiskey.service.BreweryService;

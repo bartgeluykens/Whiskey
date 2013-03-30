@@ -4,6 +4,7 @@ package be.collections.whiskey.dao;
  * Generic functions for data acces objects
  * @Autor Bart Geluykens
  */
+@SuppressWarnings("PMD.UnusedModifier")
 public interface GenericDAO<T> {
   /**
    * Save the object

@@ -3,7 +3,6 @@ package be.collections.whiskey.dao.impl;
 import be.collections.whiskey.dao.WhiskeyDAO;
 import be.collections.whiskey.dto.SearchWhiskeyDto;
 import be.collections.whiskey.model.Whiskey;
-import be.collections.whiskey.web.page.SearchWhiskey;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
@@ -53,12 +52,12 @@ public class WhiskeyDAOImpl extends GenericDAOImpl <Whiskey> implements WhiskeyD
       criteria.add(Restrictions.ilike("name", searchWhiskeyDto.getWhiskeyName() + "%"));
     }
 
-    if (( searchWhiskeyDto.getBrewery() != null) && (searchWhiskeyDto.getBrewery().getId() != null)) {
+    if ( searchWhiskeyDto.getBrewery() != null && searchWhiskeyDto.getBrewery().getId() != null) {
       criteria.createCriteria("brewery")
         .add(Restrictions.eq("id",searchWhiskeyDto.getBrewery().getId()));
     }
 
-    if (( searchWhiskeyDto.getWhiskeyType() != null) && (searchWhiskeyDto.getWhiskeyType().getId() != null)) {
+    if ( searchWhiskeyDto.getWhiskeyType() != null && searchWhiskeyDto.getWhiskeyType().getId() != null) {
       criteria.createCriteria("whiskeyType")
         .add(Restrictions.eq("id",searchWhiskeyDto.getWhiskeyType().getId()));
     }

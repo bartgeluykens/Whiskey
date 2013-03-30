@@ -24,9 +24,10 @@ public class SearchWhiskeyDto {
   @Setter
   WhiskeyType whiskeyType;
 
+  @SuppressWarnings("PMD.UselessParentheses")
   public boolean hasCriteria() {
-    return ( ( whiskeyName != null )
-           || ( (brewery != null) && (brewery.getId() != null))
-           || ((whiskeyType != null) && (whiskeyType.getId() != null)));
+    return (  whiskeyName != null
+           || (brewery != null && brewery.getId() != null)
+           || (whiskeyType != null && whiskeyType.getId() != null));
   }
 }

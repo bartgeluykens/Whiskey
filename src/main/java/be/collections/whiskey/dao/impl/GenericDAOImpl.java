@@ -3,7 +3,6 @@ package be.collections.whiskey.dao.impl;
 import be.collections.whiskey.dao.GenericDAO;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 
 /**
  * {@inheritDoc}

@@ -11,6 +11,7 @@ import java.util.List;
  * Omschrijving:
  * Aangemaakt op: 12/16/12
  */
+@SuppressWarnings("PMD.UnusedModifier")
 public interface WhiskeyTypeService {
   /**
    * List all Whiskey Types from the database
