@@ -58,6 +58,31 @@
                       </execution>
                     </executions>
         </plugin>
+        <!--<plugin>-->
+                        <!--<groupId>org.apache.maven.plugins</groupId>-->
+                        <!--<artifactId>maven-checkstyle-plugin</artifactId>-->
+                        <!--<version>2.8</version>-->
+                        <!--<inherited>true</inherited>-->
+                        <!--<configuration>-->
+                            <!--&lt;!&ndash;to skip checkstyle validation set value as "true" &ndash;&gt;-->
+                            <!--<skip>false</skip>-->
+                            <!--<consoleOutput>true</consoleOutput>-->
+                            <!--<logViolationsToConsole>true</logViolationsToConsole>-->
+                            <!--&lt;!&ndash;want to make build fail, when checkstyle found validation error. set value as "true".&ndash;&gt;-->
+                            <!--<failOnViolation>true</failOnViolation>-->
+                            <!--<violationSeverity>warning</violationSeverity>-->
+          <!--&lt;!&ndash; sun_checks.xml is default checkstyle configuration from checkstyle. Can add/remove validations in this file.  &ndash;&gt;                    &lt;!&ndash;configLocation>${basedir}/src/main/resources/sun_checks.xml</configLocation&ndash;&gt;-->
+
+                        <!--</configuration>-->
+        <!--&lt;!&ndash; the below configuration will ask maven build to execute checkstyle goal &ndash;&gt;-->
+                        <!--<executions>-->
+                            <!--<execution>-->
+                                <!--<goals>-->
+                                    <!--<goal>check</goal>-->
+                                <!--</goals>-->
+                            <!--</execution>-->
+                        <!--</executions>-->
+                    <!--</plugin>-->
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-pmd-plugin</artifactId>
