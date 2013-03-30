@@ -2,22 +2,31 @@
 <head>
   <wicket:head>
     <wicket:link>
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.2.3.1.css"/>
+      <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.min.2.3.1.css"/>
       <link rel="stylesheet" type="text/css" href="css/style.css"/>
+      <script src="js/bootstrap.min.2.3.1.js"></script>
     </wicket:link>
   </wicket:head>
 </head>
 <body>
   <div id="header"/>
-  <div id="content">
-    <div id="left-menu">
-        <b>Barts Whiskey Collection</b><br/>
-        <a wicket:id="home">Home</a><br/>
-         <a wicket:id="add">Add Whiskey</a><br/>
-        <a wicket:id="addBrewery">Add Brewery</a><br/>
-    </div>
-    <div id="right-content">
-      <wicket:child/>
-      <p/>
+  <br/>
+  <div class="container">
+     <div class="row">
+       <div class="span3">
+         <div class="well sidebar-nav">
+           <ul class="nav nav-list">
+             <li class="nav-header">My Whiskey Collection</li>
+             <li><a wicket:id="home">Home</a></li>
+             <li><a wicket:id="add">Add Whiskey</a></li>
+             <li><a wicket:id="addBrewery">Add Brewery</a></li>
+           </ul>
+          </div>
+       </div>
+      <div class="span9">
+        <wicket:child/>
+      </div>
     </div>
     <div id="footer">&copy;2012 - Bart Geluykens All rights reserved</div>
   </div>

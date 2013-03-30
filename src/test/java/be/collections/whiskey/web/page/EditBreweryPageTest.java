@@ -9,11 +9,12 @@ import org.junit.Test;
  *
  */
 public class EditBreweryPageTest extends BaseWicketTest {
+
   /**
    * Test the edit brewery page
    */
   @Test
-  public void testEditBrewery () {
+  public void whenIOpenTheEditBreweryPageIWantToSeeMySideLinks () {
     wicketTester.startPage(EditBrewery.class);
     wicketTester.assertRenderedPage(EditBrewery.class);
     checkSideLinks();

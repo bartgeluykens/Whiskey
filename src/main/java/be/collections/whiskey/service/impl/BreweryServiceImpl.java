@@ -54,4 +54,8 @@ public class BreweryServiceImpl implements BreweryService {
      */
     return breweryDAO.findById(id);
   }
+
+  public void setBreweryDAO(BreweryDAO breweryDAO) {
+    this.breweryDAO = breweryDAO;
+  }
 }

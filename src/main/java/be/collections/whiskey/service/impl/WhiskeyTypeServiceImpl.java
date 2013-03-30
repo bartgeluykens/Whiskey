@@ -38,6 +38,10 @@ public class WhiskeyTypeServiceImpl implements WhiskeyTypeService {
   public WhiskeyType findById(Integer id) {
     return whiskeyTypeDAO.findById(id);
   }
+
+  public void setWhiskeyTypeDAO(WhiskeyTypeDAO whiskeyTypeDAO) {
+    this.whiskeyTypeDAO = whiskeyTypeDAO;
+  }
 }
 
 

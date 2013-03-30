@@ -1,12 +1,17 @@
 package be.collections.whiskey.web.page;
 
-import be.collections.whiskey.BaseTest;
-import be.collections.whiskey.web.application.TestWhiskeyApplication;
+import be.collections.whiskey.service.BreweryService;
+import be.collections.whiskey.service.WhiskeyService;
+import be.collections.whiskey.service.WhiskeyTypeService;
 import org.apache.wicket.markup.html.link.Link;
-import org.apache.wicket.protocol.http.WebApplication;
-import org.apache.wicket.util.tester.WhiskeyWicketTester;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.apache.wicket.spring.injection.annot.SpringComponentInjector;
+import org.apache.wicket.util.tester.WicketTester;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.mockito.runners.MockitoJUnitRunner;
+import org.springframework.web.context.support.StaticWebApplicationContext;
 
 
 /**
@@ -15,33 +20,44 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * @Autor Bart Geluykens
  *
  */
-public abstract class BaseWicketTest extends BaseTest {
+@RunWith(MockitoJUnitRunner.class)
+public abstract class BaseWicketTest extends Assert {
   /**
    * Application context
    */
-  protected ApplicationContext applicationContext;
+  protected StaticWebApplicationContext applicationContext = new StaticWebApplicationContext();
   /**
-   * Should be WhiskeyTester, but added jira bug WICKET-4943 to solve an issue
+   * Wicket tester
    */
-  protected WhiskeyWicketTester wicketTester;
+  protected WicketTester wicketTester;
   /**
-   * Getter for the application context (if no application context found, than create one
-   * @return
+   * BreweryService
    */
-  public ApplicationContext getApplicationContext() {
-
-    if (applicationContext == null)    {
-      this.applicationContext =  new ClassPathXmlApplicationContext(new String[]{"classpath:/applicationContext.xml"});
-    }
-
-    return this.applicationContext;
-  }
+  @Mock
+  protected BreweryService breweryService;
+  /**
+   * WhiskeyService
+   */
+  @Mock
+  protected WhiskeyService whiskeyService;
+  /**
+   * BreweryService
+   */
+  @Mock
+  protected WhiskeyTypeService whiskeyTypeService;
   /**
    * Default constructor
    */
-   public BaseWicketTest() {
-     WebApplication whiskeyApplication = new TestWhiskeyApplication(this.getApplicationContext());
-     wicketTester = new WhiskeyWicketTester(whiskeyApplication);
+  @Before
+   public void setUp() {
+     wicketTester = new WicketTester();
+
+    applicationContext.getBeanFactory().registerSingleton("breweryService", breweryService);
+    applicationContext.getBeanFactory().registerSingleton("whiskeyService", whiskeyService);
+    applicationContext.getBeanFactory().registerSingleton("whiskeyTypeService", whiskeyTypeService);
+
+    wicketTester.getApplication().getComponentInstantiationListeners().add(new SpringComponentInjector(wicketTester.getApplication(), applicationContext));
+
    }
 
    public void checkSideLinks () {

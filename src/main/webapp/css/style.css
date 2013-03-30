@@ -1,86 +1,12 @@
 #header {
   background:url('../img/header.jpg');
-  height: 150px;
-}
-
-body {
- margin : 0;
-}
-
-h1 {
-  margin:  0;
-  text-align: center;
+  height: 20px;
 }
 
 #footer {
     clear: both;
     border-top: 1px solid;
     text-align: center;
-}
-
-#content {
-   margin-left: auto;
-   margin-right: auto;
-   margin-top: 10px;
-   width: 1024px;
-}
-
-#left-menu {
-   margin:  0;
-   width: 200px;
-   float: left;
-}
-
-#right-content {
-   width: 810px;
-   float: right;
-}
-
-
-
-table.dataview {
-    margin-bottom: 10px;
-    border-bottom: 1px solid #0079D6;
-    font-size: 1em;
-}
-
-
-table.dataview td {
-    padding-left: 8px;
-}
-
-tr {
-    display: table-row;
-    vertical-align: inherit;
-    border-color: inherit;
-}
-
-
-table.dataview tr.odd {
-    background-color: white;
-}
-
-table.dataview tr.even {
-    background-color: blanchedAlmond;
-}
-
-table.dataview tr {
-    padding-top: 2px;
-    padding-bottom: 2px;
-}
-
-table.dataview tr th {
-    color: black;
-    padding-top: 3px;
-    padding-bottom: 3px;
-    padding-left: 8px;
-    padding-right: 30px;
-    background-color: #C1E4FF;
-    border-bottom: 1px solid #0079D6;
-    border-top: 1px solid #0079D6;
-    text-align: left;
-    white-space: nowrap;
-    vertical-align: middle;
 }
 
 .feedbackPanelERROR {

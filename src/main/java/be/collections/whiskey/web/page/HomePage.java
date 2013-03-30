@@ -34,7 +34,7 @@ public class HomePage extends BasePage {
 
     List< Whiskey > whiskeyList = whiskeyService.findAll();
 
-    add(new DataView<Whiskey>("whiskeyTable", new ListDataProvider(whiskeyList))
+    add(new DataView<Whiskey>("whiskey-table", new ListDataProvider(whiskeyList))
     {
         private static final long serialVersionUID = 1L;
 
@@ -43,14 +43,14 @@ public class HomePage extends BasePage {
        {
            Whiskey whiskey = item.getModelObject();
 
-           item.add(new Link<Void>("details") {
+           item.add(new Link<Void>("whiskey-details") {
               @Override
                public void onClick() {
                  setResponsePage(new DetailsPage(item.getModelObject()));
               }
             });
 
-           item.add(new Link<Void>("editDetails") {
+           item.add(new Link<Void>("whiskey-edit") {
               @Override
                public void onClick() {
                  setResponsePage(new EditWhiskey(item.getModelObject()));
@@ -58,30 +58,17 @@ public class HomePage extends BasePage {
             });
 
 
-         item.add(new Link<Void>("editBrewery") {
+         item.add(new Link<Void>("brewery-edit") {
             @Override
              public void onClick() {
                setResponsePage(new EditBrewery(item.getModelObject().getBrewery()));
             }
           });
 
-
-
-           item.add(new Label("whiskey", whiskey.getName()));
-           item.add(new Label("brewery", whiskey.getBrewery().getName()));
-           item.add(new Label("type"   , whiskey.getWhiskeyType().getDescription()));
-           item.add(new Label("remarks", whiskey.getRemarks()));
-
-           item.add(AttributeModifier.replace("class", new AbstractReadOnlyModel<String>() {
-                private static final long serialVersionUID = 1L;
-
-                  @Override
-                  public String getObject() {
-                    return (item.getIndex() % 2 == 1) ? "even" : "odd";
-                  }
-           }));
-
-
+         item.add(new Label("whiskey", whiskey.getName()));
+         item.add(new Label("brewery", whiskey.getBrewery().getName()));
+         item.add(new Label("type"   , whiskey.getWhiskeyType().getDescription()));
+         item.add(new Label("remarks", whiskey.getRemarks()));
 
        }
 

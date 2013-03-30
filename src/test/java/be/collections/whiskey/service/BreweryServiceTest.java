@@ -3,11 +3,15 @@ package be.collections.whiskey.service;
 import be.collections.whiskey.BaseTest;
 import be.collections.whiskey.dao.BreweryDAO;
 import be.collections.whiskey.model.Brewery;
+import be.collections.whiskey.service.impl.BreweryServiceImpl;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -15,7 +19,7 @@ import java.util.List;
  *
  * @Autor Bart Geluykens
  */
-public class BreweryServiceTest extends BaseTest {
+public class BreweryServiceTest extends Assert {
   /**
    * Dummy brewery name
    */
@@ -23,43 +27,73 @@ public class BreweryServiceTest extends BaseTest {
   /**
    * Brewery service
    */
-  @Autowired
   BreweryService breweryService;
   /**
    * Brewery DAO
    */
-  @Autowired
   BreweryDAO breweryDAO;
   /**
    * initialize brewery
    */
   @Before
   public void init () {
-      Brewery brewery = new Brewery();
+      breweryService = new BreweryServiceImpl();
 
-      brewery.setName(breweryName);
-      brewery.setLocation("Brewery Island");
+      breweryDAO = Mockito.mock(BreweryDAO.class);
+      ((BreweryServiceImpl)breweryService).setBreweryDAO(breweryDAO);
 
-      breweryDAO.save(brewery);
+
   }
   /**
    * Does the find all breweries work?
    */
   @Test
-  public void findAllBreweries() {
+  public void whenIDoFindAllIWantToGetAListOfBreweries() {
+
+    List<Brewery> breweries = new ArrayList<Brewery>();
+    Brewery brewery = new Brewery();
+    brewery.setName(breweryName);
+    brewery.setLocation("Brewery Island");
+    breweries.add(brewery);
+
+    Mockito.when(breweryDAO.findAll()).thenReturn(breweries);
+
     List<Brewery> breweryList = breweryService.findAll();
-    assert (breweryList.size() > 0) ;
-  }
-  /**
-   * Remove brewery
-   */
-  @After
-  public void after () {
-
-     for (Brewery brewery : breweryService.findByName(breweryName)) {
-       breweryDAO.remove(brewery);
-     }
+    assertEquals(breweryList.size() , 1);
+    assertEquals(breweryList.get(0).getName(), breweryName);
+    assertEquals(breweryList.get(0).getLocation(),"Brewery Island");
   }
 
+  @Test
+  public void whenISearchByNameIWantToGetAListOfBreweries() {
+
+    List<Brewery> breweries = new ArrayList<Brewery>();
+    Brewery brewery = new Brewery();
+    brewery.setName(breweryName);
+    brewery.setLocation("Brewery Island");
+    breweries.add(brewery);
+
+    Mockito.when(breweryDAO.findByName(breweryName)).thenReturn(breweries);
+
+    List<Brewery> breweryList = breweryService.findByName(breweryName);
+    assertEquals(breweryList.size() , 1);
+    assertEquals(breweryList.get(0).getName(), breweryName);
+    assertEquals(breweryList.get(0).getLocation(),"Brewery Island");
+  }
+
+
+  @Test
+  public void whenISearchByIdIWantToGetABrewery() {
+
+    Brewery brewery = new Brewery();
+    brewery.setName(breweryName);
+    brewery.setLocation("Brewery Island");
+
+    Mockito.when(breweryDAO.findById(1)).thenReturn(brewery);
+
+    Brewery resultBrewery = breweryService.findById(1);
+    assertEquals(resultBrewery.getName(), breweryName);
+    assertEquals(resultBrewery.getLocation(),"Brewery Island");
+  }
 
 }

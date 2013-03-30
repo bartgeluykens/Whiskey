@@ -3,9 +3,12 @@
 </head>
 <body>
   <wicket:extend>
-     <h1>My Whiskey's</h1>
-      This is a list of all whiskey's in my possession:
-      <table cellspacing="0" class="dataview">
+     <div class="hero-unit">
+       <h1>My Whiskey's</h1>
+        An extensive list with all whiskeys in my possession
+     </div>
+      <div class="row">
+      <table cellspacing="0" class="table table-hover .table-condensed">
           <tr>
               <th>Action</th>
               <th>Whiskey</th>
@@ -13,14 +16,17 @@
               <th>Brewery</th>
               <th>Remarks</th>
           </tr>
-          <tr wicket:id="whiskeyTable">
-              <td><a wicket:id="details">Details</a>&nbsp;-&nbsp;<a wicket:id="editDetails">Edit</a>&nbsp;-&nbsp;<a wicket:id="editBrewery">Brewery</a></td>
+          <tr wicket:id="whiskey-table">
+              <td><a wicket:id="whiskey-details" title="details of this whiskey"><i class=" icon-file"></i></a>
+                  <a wicket:id="whiskey-edit" title="edit this whiskey"><i class="icon-pencil"></i></a>
+                  <a wicket:id="brewery-edit" title="edit brewery"><i class="icon-glass"></i></a></td>
               <td><span wicket:id="whiskey">[whiskey]</span></td>
               <td><span wicket:id="type">[type]</span></td>
               <td><span wicket:id="brewery">[brewer]</span></td>
               <td><span wicket:id="remarks">[Remakrs]</span></td>
           </tr>
       </table>
+      </div>
   </wicket:extend>
 </body>
 </html>
