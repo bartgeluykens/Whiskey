@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<FindBugsFilter>
+  <Match>
+    <Or>
+      <Class name="~.*/*" />
+    </Or>
+    <Bug pattern="SE_INNER_CLASS" />
+  </Match>
+
+  <Match>
+    <Or>
+      <Class name="~.*/*" />
+    </Or>
+    <Bug pattern="SE_NO_SERIALVERSIONID" />
+  </Match>
+
+  <Match>
+    <Or>
+      <Class name="~.*/*" />
+    </Or>
+    <Bug pattern="SE_BAD_FIELD" />
+  </Match>
+
+<!-- Solve this -->
+  <Match>
+    <Or>
+      <Class name="~.*/*" />
+    </Or>
+    <Bug pattern="SIC_INNER_SHOULD_BE_STATIC_ANON" />
+  </Match>
+
+</FindBugsFilter>
+
+

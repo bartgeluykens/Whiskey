@@ -21,7 +21,7 @@ public class Whiskey implements Serializable {
   @Column(name ="id")
   @SequenceGenerator(name = "sq_whiskey", sequenceName = "sq_whiskey", allocationSize = 1)
   @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sq_whiskey")
-  Integer Id;
+  Integer id;
 
   @Getter
   @Setter
