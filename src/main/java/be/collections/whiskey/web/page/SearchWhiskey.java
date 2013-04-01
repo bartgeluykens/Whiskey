@@ -104,10 +104,20 @@ public class SearchWhiskey extends BasePage {
        };
     searchForm.add(searchButton);
 
+
+    Button resetButton = new Button("button-reset") {
+           @Override
+           public void onSubmit() {
+             setResponsePage(new SearchWhiskey());
+           }
+       };
+    searchForm.add(resetButton);
+
+
     List<Whiskey> whiskeyList = whiskeyService.search(searchWhiskeyDto);
 
     Label noDataFoundLabel = new Label("no-data-found-container", "no data found");
-    noDataFoundLabel.setVisible(whiskeyList.size() == 0);
+    noDataFoundLabel.setVisible(whiskeyList.size() == 0 && searchWhiskeyDto.hasCriteria());
     add(noDataFoundLabel);
 
     WhiskeyOverviewPanel whiskeyOverviewPanel = new WhiskeyOverviewPanel("overview-panel", whiskeyList);

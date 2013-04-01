@@ -5,6 +5,7 @@ import be.collections.whiskey.model.Brewery;
 import be.collections.whiskey.model.Whiskey;
 import be.collections.whiskey.model.WhiskeyType;
 import org.apache.wicket.util.tester.FormTester;
+import org.junit.Assert;
 import org.junit.Test;
 import org.mockito.Matchers;
 import org.mockito.Mockito;
@@ -73,6 +74,22 @@ public class SearchWhiskeyTest extends BaseWicketTest {
 
     wicketTester.assertInvisible("no-data-found-container");
     wicketTester.assertVisible("overview-panel");
+  }
+
+
+  @Test
+  public void whenClickOnResetThenNoSearchData() {
+
+    wicketTester.startPage(SearchWhiskey.class, null);
+
+    FormTester formTester = wicketTester.newFormTester("search-form");
+    formTester.setValue("name","Test");
+    formTester .submit("button-reset");
+
+    formTester = wicketTester.newFormTester("search-form");
+
+    Assert.assertEquals(formTester.getTextComponentValue("name"),"");
+
   }
 
 
