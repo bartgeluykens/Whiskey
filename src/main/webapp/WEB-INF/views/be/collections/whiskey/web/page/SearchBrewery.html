@@ -1,0 +1,43 @@
+<html xmlns:wicket="">
+<head>
+</head>
+<body>
+  <wicket:extend>
+    <div wicket:id="feedback"/>
+    <div class="hero-unit">
+      <h1>Search Brewery</h1>
+      <form wicket:id="search-form">
+          <table>
+              <tr>
+                  <td>Brewery name:</td>
+                  <td><input wicket:id="brewery-name" type="text" size="100"/></td>
+              </tr>
+              <tr>
+                  <td>Whiskey name:</td>
+                  <td><input wicket:id="whiskey-name" type="text" size="100"/></td>
+              </tr>
+          </table>
+          <input type="submit" value="Search" wicket:id="button-search" class="btn btn-primary"/>
+          <input type="submit" value="Reset" wicket:id="button-reset" class="btn btn-inverse"/>
+      </form>
+    </div>
+    <div class="row">
+      <div wicket:id="no-data-found-container">No data found</div>
+      <span wicket:id="result-container">
+          <table cellspacing="0" class="table table-hover .table-condensed">
+              <tr>
+                  <th>Action</th>
+                  <th>Brewery</th>
+                  <th>Location</th>
+              </tr>
+              <tr wicket:id="brewery-table">
+                  <td><a wicket:id="brewery-edit" title="edit brewery"><i class="icon-glass"></i></a></td>
+                  <td><span wicket:id="name">name</span></td>
+                  <td><span wicket:id="location">[location]</span></td>
+              </tr>
+          </table>
+      </span>
+    </div>
+  </wicket:extend>
+</body>
+</html>
