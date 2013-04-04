@@ -1,6 +1,7 @@
 package be.collections.whiskey.service.impl;
 
 import be.collections.whiskey.dao.BreweryDAO;
+import be.collections.whiskey.dto.SearchBreweryDto;
 import be.collections.whiskey.model.Brewery;
 import be.collections.whiskey.service.BreweryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,6 +56,19 @@ public class BreweryServiceImpl implements BreweryService {
     return breweryDAO.findById(id);
   }
 
+  /**
+   * {@inheritDoc}
+   */
+  @Override
+  public List<Brewery> search(SearchBreweryDto searchBreweryDto) {
+    return breweryDAO.search(searchBreweryDto);
+  }
+
+  /**
+   * setBreweryDao: for testing purposes
+   *
+   * @param breweryDAO
+   */
   public void setBreweryDAO(BreweryDAO breweryDAO) {
     this.breweryDAO = breweryDAO;
   }

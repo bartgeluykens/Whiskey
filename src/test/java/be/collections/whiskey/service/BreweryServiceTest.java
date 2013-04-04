@@ -2,6 +2,7 @@ package be.collections.whiskey.service;
 
 import be.collections.whiskey.BaseTest;
 import be.collections.whiskey.dao.BreweryDAO;
+import be.collections.whiskey.dto.SearchBreweryDto;
 import be.collections.whiskey.model.Brewery;
 import be.collections.whiskey.service.impl.BreweryServiceImpl;
 import org.junit.After;
@@ -94,6 +95,19 @@ public class BreweryServiceTest extends Assert {
     Brewery resultBrewery = breweryService.findById(1);
     assertEquals(resultBrewery.getName(), breweryName);
     assertEquals(resultBrewery.getLocation(),"Brewery Island");
+  }
+
+  @Test
+  public void whenISearchBySeachCriteriaIWantToGetAListOfBreweries() {
+    SearchBreweryDto searchBreweryDto = new SearchBreweryDto();
+
+    List<Brewery> breweries = new ArrayList<Brewery>();
+    breweries.add(new Brewery());
+
+    Mockito.when(breweryDAO.search(searchBreweryDto)).thenReturn(breweries);
+
+    List<Brewery> breweryResult = breweryService.search(searchBreweryDto);
+    assertEquals(breweryResult.size(), 1);
   }
 
 }

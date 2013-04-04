@@ -2,6 +2,7 @@ package be.collections.whiskey.web.page;
 
 import be.collections.whiskey.model.Brewery;
 import be.collections.whiskey.service.BreweryService;
+import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.Button;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.TextField;
@@ -35,6 +36,8 @@ public class EditBrewery extends BasePage {
   public EditBrewery(Brewery brewery) {
     super();
 
+    add(new Label("title", getTitleText(brewery)));
+
     Form breweryForm = new Form("breweryForm");
 
     final FeedbackPanel feedbackPanel = new FeedbackPanel("feedback");
@@ -64,4 +67,12 @@ public class EditBrewery extends BasePage {
 
     add(breweryForm);
   }
+
+  public String getTitleText (Brewery brewery) {
+    if (brewery.getId() == null) {
+      return "Add brewery";
+    }
+    return "Edit brewery";
+  }
+
 }

@@ -65,5 +65,6 @@ public class WhiskeyApplication extends WebApplication {
     mountPage("/editWhiskey.aspx", EditWhiskey.class);
     mountPage("/editBrewery.aspx", EditBrewery.class);
     mountPage("/searchWhiskey.aspx", SearchWhiskey.class);
+    mountPage("/searchBrewery.aspx", SearchBrewery.class);
   }
 }

@@ -1,5 +1,6 @@
 package be.collections.whiskey.service;
 
+import be.collections.whiskey.dto.SearchBreweryDto;
 import be.collections.whiskey.model.Brewery;
 
 import java.util.List;
@@ -38,4 +39,12 @@ public interface BreweryService {
    * @return a brewery
    */
   public Brewery findById(Integer id);
+  /**
+   * Search a List of Breweries
+   *
+   * @param searchBreweryDto
+   * @return
+   */
+  public List<Brewery> search(SearchBreweryDto searchBreweryDto);
+
 }

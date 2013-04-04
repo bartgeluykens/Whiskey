@@ -28,4 +28,5 @@ public interface WhiskeyTypeDAO extends GenericDAO<WhiskeyType> {
    * @return whiskeytype
    */
  public WhiskeyType findById(Integer id);
+
 }

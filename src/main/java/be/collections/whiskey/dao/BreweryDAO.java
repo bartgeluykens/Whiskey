@@ -1,5 +1,6 @@
 package be.collections.whiskey.dao;
 
+import be.collections.whiskey.dto.SearchBreweryDto;
 import be.collections.whiskey.model.Brewery;
 import org.springframework.stereotype.Repository;
 
@@ -36,4 +37,11 @@ public interface BreweryDAO  extends GenericDAO<Brewery> {
    * @return brewery
    */
   Brewery findById(Integer id);
+  /**
+   * Search a List of Breweries
+   *
+   * @param searchBreweryDto
+   * @return
+   */
+  public List<Brewery> search(SearchBreweryDto searchBreweryDto);
 }

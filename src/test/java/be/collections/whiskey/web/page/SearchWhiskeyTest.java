@@ -24,6 +24,7 @@ public class SearchWhiskeyTest extends BaseWicketTest {
     wicketTester.startPage(SearchWhiskey.class, null);
     wicketTester.assertRenderedPage(SearchWhiskey.class);
     checkSideLinks();
+    wicketTester.assertInvisible("no-data-found-container");
   }
 
   @Test

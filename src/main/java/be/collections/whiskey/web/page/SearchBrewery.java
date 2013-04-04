@@ -33,6 +33,10 @@ public class SearchBrewery extends BasePage {
    */
   @SpringBean
   BreweryService breweryService;
+  /**
+   * Feedbackpanel
+   */
+  FeedbackPanel feedbackPanel;
 
   public SearchBrewery() {
     super();
@@ -48,9 +52,9 @@ public class SearchBrewery extends BasePage {
 
   private void init(SearchBreweryDto searchBreweryDto) {
     searchForm = new Form("search-form");
-
     add(searchForm);
-    final FeedbackPanel feedbackPanel = new FeedbackPanel("feedback");
+
+    feedbackPanel = new FeedbackPanel("feedback");
     add(feedbackPanel);
 
     searchForm.setModel(new CompoundPropertyModel(searchBreweryDto));
@@ -66,25 +70,7 @@ public class SearchBrewery extends BasePage {
        };
     searchForm.add(resetButton);
 
-    Button searchButton = new Button("button-search") {
-           @Override
-           public void onSubmit() {
-             try {
-               SearchBreweryDto searchBrewery = (SearchBreweryDto)searchForm.getModelObject();
-
-               if (!searchBrewery.hasCriteria()) {
-                 feedbackPanel.error("No seach criteria");
-               }  else {
-
-                 setResponsePage(new SearchBrewery(searchBrewery));
-               }
-
-             } catch (RuntimeException ex) {
-               feedbackPanel.error(ex.getMessage());
-             }
-           }
-
-       };
+    Button searchButton = new SearchButton();
     searchForm.add(searchButton);
 
     List<Brewery> breweryList = breweryService.search(searchBreweryDto);
@@ -120,6 +106,31 @@ public class SearchBrewery extends BasePage {
 
 
   }
+
+  private class SearchButton extends Button {
+
+    public SearchButton () {
+      super("button-search");
+    }
+
+    @Override
+    public void onSubmit() {
+     try {
+       SearchBreweryDto searchBrewery = (SearchBreweryDto)searchForm.getModelObject();
+
+       if (!searchBrewery.hasCriteria()) {
+         feedbackPanel.error("No seach criteria");
+       }  else {
+
+         setResponsePage(new SearchBrewery(searchBrewery));
+       }
+
+     } catch (RuntimeException ex) {
+       feedbackPanel.error(ex.getMessage());
+     }
+    }
+
+ };
 
 
 }

@@ -3,7 +3,7 @@
 </head>
 <body>
   <wicket:extend>
-     <h1>Add a brewery</h1>
+     <h1 wicket:id="title">Add a brewery</h1>
       <form id="breweryForm" wicket:id="breweryForm">
           <div wicket:id="feedback"/>
           <table>
@@ -16,7 +16,7 @@
                   <td><input wicket:id="location" id="location" type="text" size="40" value="location"/></td>
               </tr>
           </table>
-          <input type="submit" value="Save" name="save" wicket:id="submitButton"/>&nbsp;
+          <input type="submit" value="Save" wicket:id="submitButton" class="btn btn-primary"/>&nbsp;
       </form>
   </wicket:extend>
 </body>

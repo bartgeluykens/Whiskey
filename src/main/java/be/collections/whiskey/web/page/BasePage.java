@@ -31,6 +31,15 @@ public class BasePage extends WebPage {
        }
      });
     /**
+     * search link
+     */
+    add(new Link<Void>("search-whiskey") {
+       @Override
+       public void onClick() {
+         setResponsePage(new SearchWhiskey());
+       }
+     });
+    /**
      * Add brewery link
      */
     add(new Link<Void>("add-brewery") {
@@ -40,12 +49,12 @@ public class BasePage extends WebPage {
        }
      });
     /**
-     * search link
+     * Add Search brewery link
      */
-    add(new Link<Void>("search-whiskey") {
+    add(new Link<Void>("search-brewery") {
        @Override
        public void onClick() {
-         setResponsePage(new SearchWhiskey());
+         setResponsePage(new SearchBrewery());
        }
      });
 
