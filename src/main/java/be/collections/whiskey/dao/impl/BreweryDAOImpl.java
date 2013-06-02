@@ -19,6 +19,10 @@ import java.util.List;
  */
 @Repository
 public class BreweryDAOImpl extends GenericDAOImpl <Brewery> implements BreweryDAO {
+
+    public BreweryDAOImpl(Class<Brewery> clazz) {
+        super(clazz);
+    }
   /**
    * {@inheritDoc}
    */
@@ -34,15 +38,6 @@ public class BreweryDAOImpl extends GenericDAOImpl <Brewery> implements BreweryD
     Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Brewery.class);
     criteria.add(Restrictions.eq("name", name));
     return criteria.list();
-  }
-  /**
-   * {@inheritDoc}
-   */
-  @Override
-  public Brewery findById(Integer id) {
-    Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Brewery.class);
-    criteria.add(Restrictions.eq("id", id));
-    return (Brewery)criteria.uniqueResult();
   }
   /**
    * {@inheritDoc}

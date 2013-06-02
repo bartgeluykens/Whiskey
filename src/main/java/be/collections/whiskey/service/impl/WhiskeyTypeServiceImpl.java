@@ -30,8 +30,8 @@ public class WhiskeyTypeServiceImpl implements WhiskeyTypeService {
    * {@inheritDoc}
    */
   @Override
-  public WhiskeyType findById(Integer id) {
-    return whiskeyTypeDAO.findById(id);
+  public WhiskeyType get(Integer id) {
+    return whiskeyTypeDAO.get(id);
   }
 
   public void setWhiskeyTypeDAO(WhiskeyTypeDAO whiskeyTypeDAO) {

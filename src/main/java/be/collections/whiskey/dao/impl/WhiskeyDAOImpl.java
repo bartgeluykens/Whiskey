@@ -2,6 +2,7 @@ package be.collections.whiskey.dao.impl;
 
 import be.collections.whiskey.dao.WhiskeyDAO;
 import be.collections.whiskey.dto.SearchWhiskeyDto;
+import be.collections.whiskey.model.Brewery;
 import be.collections.whiskey.model.Whiskey;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
@@ -17,10 +18,10 @@ import java.util.List;
  */
 @Repository
 public class WhiskeyDAOImpl extends GenericDAOImpl <Whiskey> implements WhiskeyDAO {
-  /**
+    /**
    * {@inheritDoc}
    */
- public WhiskeyDAOImpl() {
+   public WhiskeyDAOImpl() {
 		super();
 	}
   /**

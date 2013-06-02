@@ -12,7 +12,7 @@ import java.util.List;
  * Aangemaakt op: 12/16/12
  */
 @SuppressWarnings("PMD.UnusedModifier")
-public interface WhiskeyTypeService {
+public interface WhiskeyTypeService extends GenericService<WhiskeyType> {
   /**
    * List all Whiskey Types from the database
    *
@@ -20,11 +20,4 @@ public interface WhiskeyTypeService {
    */
   public List<WhiskeyType> findAll();
 
-  /**
-   * Find whiskeytype by id
-   *
-   * @param id
-   * @return
-   */
-  public WhiskeyType findById(Integer id);
 }

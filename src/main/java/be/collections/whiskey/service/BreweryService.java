@@ -11,7 +11,7 @@ import java.util.List;
  * @Autor bart
  */
 @SuppressWarnings("PMD.UnusedModifier")
-public interface BreweryService {
+public interface BreweryService extends GenericService<Brewery> {
   /**
    * List all breweries
    *
@@ -32,13 +32,6 @@ public interface BreweryService {
    * @return The saved brewery
    */
   public Brewery save(Brewery brewery);
-  /**
-   * Find a brewery by id
-   *
-   * @param id
-   * @return a brewery
-   */
-  public Brewery findById(Integer id);
   /**
    * Search a List of Breweries
    *

@@ -39,6 +39,10 @@ public class WhiskeyServiceImpl implements WhiskeyService{
   public void remove(Whiskey whiskey) {
     whiskeyDAO.remove(whiskey);
   }
+
+  public Whiskey get(Integer id) {
+      return whiskeyDAO.get(id);
+  }
   /**
    * {@inheritDoc}
    */

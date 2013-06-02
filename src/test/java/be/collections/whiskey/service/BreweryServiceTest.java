@@ -90,9 +90,9 @@ public class BreweryServiceTest extends Assert {
     brewery.setName(breweryName);
     brewery.setLocation("Brewery Island");
 
-    Mockito.when(breweryDAO.findById(1)).thenReturn(brewery);
+    Mockito.when(breweryDAO.get(1)).thenReturn(brewery);
 
-    Brewery resultBrewery = breweryService.findById(1);
+    Brewery resultBrewery = breweryService.get(1);
     assertEquals(resultBrewery.getName(), breweryName);
     assertEquals(resultBrewery.getLocation(),"Brewery Island");
   }

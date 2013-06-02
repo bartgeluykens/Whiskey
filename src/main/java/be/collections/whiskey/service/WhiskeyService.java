@@ -11,7 +11,7 @@ import java.util.List;
  * @Autor bart
  */
 @SuppressWarnings("PMD.UnusedModifier")
-public interface WhiskeyService {
+public interface WhiskeyService extends GenericService<Whiskey> {
   /**
    * List all whiskeys
    *

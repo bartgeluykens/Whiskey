@@ -2,6 +2,8 @@ package be.collections.whiskey.web.page;
 
 import be.collections.whiskey.model.Brewery;
 import be.collections.whiskey.service.BreweryService;
+import be.collections.whiskey.service.GenericService;
+import be.collections.whiskey.web.model.LoadableWhiskeyModel;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.Button;
 import org.apache.wicket.markup.html.form.Form;
@@ -34,7 +36,10 @@ public class EditBrewery extends BasePage {
    * @param brewery the brewery to edit
    */
   public EditBrewery(Brewery brewery) {
-    super();
+      super();
+      LoadableWhiskeyModel loadableModel = new LoadableWhiskeyModel(brewery.getId(), (GenericService)breweryService, Brewery.class);
+      CompoundPropertyModel<Brewery> model = new CompoundPropertyModel<Brewery>(loadableModel);
+
 
     add(new Label("title", getTitleText(brewery)));
 

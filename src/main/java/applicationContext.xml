@@ -50,9 +50,20 @@
 	</bean>
     <!-- Telling where spring has to look for classes -->
     <context:component-scan base-package="be.collections.whiskey.service"/>
-    <context:component-scan base-package="be.collections.whiskey.dao"/>
-    <context:component-scan base-package="be.collections.whiskey.dao.impl"/>
     <context:component-scan base-package="be.collections.whiskey.model"/>
+
+    <bean id="breweryDAO" class="be.collections.whiskey.dao.impl.BreweryDAOImpl" autowire="constructor">
+        <constructor-arg value="be.collections.whiskey.model.Brewery" type="java.lang.Class"/>
+    </bean>
+    <bean id="whiskeyDAO" class="be.collections.whiskey.dao.impl.WhiskeyDAOImpl" autowire="constructor">
+        <constructor-arg value="be.collections.whiskey.model.Whiskey" type="java.lang.Class"/>
+    </bean>
+    <bean id="whiskeyTypeDAO" class="be.collections.whiskey.dao.impl.WhiskeyTypeDAOImpl" autowire="constructor">
+        <constructor-arg value="be.collections.whiskey.model.WhiskeyType" type="java.lang.Class"/>
+    </bean>
+
+
+
     <!-- Hard defining a few classes
          I could annotate service right here, but than It is harder to mock these classes.
     -->

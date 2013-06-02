@@ -98,8 +98,8 @@ public class WhiskeyDaoTest extends BaseTest {
   @Test
   public void whenSavingAWhiskey () {
 
-    Brewery brewery = breweryDAO.findById(1);
-    WhiskeyType whiskeyType = whiskeyTypeDAO.findById(1);
+    Brewery brewery = breweryDAO.get(1);
+    WhiskeyType whiskeyType = whiskeyTypeDAO.get(1);
 
     Whiskey whiskey = new Whiskey();
     whiskey.setBrewery(brewery);

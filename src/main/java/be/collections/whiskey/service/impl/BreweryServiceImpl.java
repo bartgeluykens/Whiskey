@@ -42,26 +42,15 @@ public class BreweryServiceImpl implements BreweryService {
   public Brewery save(Brewery brewery) {
     return breweryDAO.save(brewery);
   }
-
-  /**
-   * {@inheritDoc}
-   */
-  @Override
-  public Brewery findById(Integer id) {
-    /**
-     * This should work, but for an unkown reason it doesn't. Have to find this out why
-     *
-     * return breweryDAO.get(id);
-     */
-    return breweryDAO.findById(id);
-  }
-
   /**
    * {@inheritDoc}
    */
   @Override
   public List<Brewery> search(SearchBreweryDto searchBreweryDto) {
     return breweryDAO.search(searchBreweryDto);
+  }
+  public Brewery get(Integer id) {
+      return breweryDAO.get(id);
   }
 
   /**

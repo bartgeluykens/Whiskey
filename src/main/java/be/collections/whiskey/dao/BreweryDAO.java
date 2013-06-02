@@ -29,14 +29,6 @@ public interface BreweryDAO  extends GenericDAO<Brewery> {
    * @return  List of breweries wit this name
    */
   List<Brewery> findByName (String name);
-
-  /**
-   * find brewery by id
-   *
-   * @param id
-   * @return brewery
-   */
-  Brewery findById(Integer id);
   /**
    * Search a List of Breweries
    *
