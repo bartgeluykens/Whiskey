@@ -186,7 +186,7 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
-      <version>3.1.2.RELEASE</version>
+      <version>5.2.20.RELEASE</version>
     </dependency>
     <!-- Spring transaction management, as it's optional, it's not in transitive dependencies of Spring MVC -->
     <dependency>
